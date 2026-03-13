@@ -1,0 +1,275 @@
+:root {
+  --bg:        #000000;
+  --dark:       #0f0005;
+  --red:        #c00000;       /* основной красный */
+  --red-dark:   #900000;
+  --red-glow:   #ff1a1a;
+  --text:       #f0e0e0;
+  --text-light: #b0a0a0;
+  --border:     rgba(192,0,0,0.14);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+h1, h2, h3 {
+  font-family: 'Orbitron', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1.8px;
+}
+
+/* ================== HEADER ================== */
+
+header {
+  height: 100vh;
+  min-height: 720px;
+  background: linear-gradient(rgba(0,0,0,0.92), rgba(0,0,0,0.96)),
+              url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80') center/cover fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.header-content {
+  max-width: 1100px;
+  padding: 0 24px;
+}
+
+h1.noir-text {
+  font-size: clamp(5rem, 15vw, 12rem);
+  margin-bottom: 0.4em;
+  line-height: 0.9;
+}
+
+h1 span {
+  color: var(--red);
+  text-shadow: 
+    0 0 15px var(--red-glow),
+    0 0 35px var(--red);
+}
+
+header p {
+  font-size: 1.55rem;
+  max-width: 780px;
+  margin: 1.6rem auto;
+  color: var(--text-light);
+}
+
+.header-buttons {
+  margin-top: 2.8rem;
+}
+
+.btn-red {
+  display: inline-block;
+  padding: 16px 50px;
+  font-size: 1.3rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: white;
+  background: rgba(192,0,0,0.15);
+  border: 2px solid var(--red);
+  border-radius: 50px;
+  transition: all 0.35s ease;
+  margin: 0 1.2rem;
+}
+
+.btn-red:hover {
+  background: var(--red);
+  color: #000;
+  box-shadow: 0 0 40px rgba(192,0,0,0.6);
+  transform: translateY(-3px);
+}
+
+.btn-red.secondary {
+  background: transparent;
+  border-color: var(--text-light);
+  color: var(--text-light);
+}
+
+.btn-red.secondary:hover {
+  background: var(--text-light);
+  color: #000;
+  border-color: transparent;
+}
+
+/* ================== SECTIONS ================== */
+
+section {
+  padding: 140px 5%;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+h2 {
+  font-size: 5rem;
+  text-align: center;
+  margin-bottom: 3.5rem;
+  color: var(--red);
+  text-shadow: 0 0 35px rgba(192,0,0,0.4);
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 2.5rem;
+}
+
+.card {
+  background: rgba(15,0,5,0.75);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  backdrop-filter: blur(6px);
+}
+
+.card:hover {
+  transform: translateY(-14px);
+  box-shadow: 0 20px 60px rgba(192,0,0,0.25);
+  border-color: var(--red);
+}
+
+.card-img {
+  height: 260px;
+  background-size: cover;
+  background-position: center;
+}
+
+.card-body {
+  padding: 2.2rem;
+  text-align: center;
+}
+
+.card h3 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--text);
+}
+
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.8rem;
+  margin-top: 5rem;
+}
+
+.feature-item {
+  background: rgba(192,0,0,0.08);
+  padding: 1.6rem 2.8rem;
+  border-radius: 12px;
+  min-width: 260px;
+  text-align: center;
+  border: 1px solid rgba(192,0,0,0.2);
+  font-size: 1.15rem;
+}
+
+/* Reserve */
+
+.section-reserve {
+  background: linear-gradient(135deg, #0a0000, #100005);
+}
+
+.reserve-subtitle {
+  text-align: center;
+  font-size: 1.4rem;
+  max-width: 720px;
+  margin: 0 auto 3rem;
+  color: var(--text-light);
+}
+
+.reserve-form {
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+.reserve-form input,
+.reserve-form button {
+  width: 100%;
+  padding: 18px;
+  margin: 14px 0;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.03);
+  color: white;
+  font-size: 1.2rem;
+}
+
+.reserve-form button {
+  background: var(--red);
+  color: white;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.reserve-form button:hover {
+  background: var(--red-dark);
+  box-shadow: 0 0 35px rgba(192,0,0,0.5);
+}
+
+/* Footer */
+
+footer {
+  background: var(--dark);
+  padding: 5rem 5% 3rem;
+  text-align: center;
+  border-top: 1px solid var(--border);
+}
+
+.footer-info {
+  font-size: 1.35rem;
+  line-height: 1.8;
+  margin: 2rem 0;
+}
+
+.social a {
+  color: var(--text-light);
+  font-size: 2.1rem;
+  margin: 0 1.5rem;
+  transition: 0.3s;
+}
+
+.social a:hover {
+  color: var(--red);
+  transform: translateY(-4px);
+}
+
+.copyright {
+  margin-top: 3.5rem;
+  opacity: 0.5;
+  font-size: 0.95rem;
+}
+
+/* Анимация появления */
+.fade-in {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 1s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  h2 { font-size: 3.6rem; }
+  header p { font-size: 1.3rem; }
+  .btn-red { padding: 14px 40px; font-size: 1.15rem; }
+}

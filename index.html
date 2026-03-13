@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VoidDev | Портфолио</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600&amp;display=swap');
+        
+        :root {
+            --accent: 165 243 252;
+        }
+        
+        .neon-text {
+            text-shadow: 0 0 20px rgb(165 243 252),
+                         0 0 40px rgb(165 243 252);
+        }
+        
+        .project-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .project-card:hover {
+            transform: translateY(-12px) scale(1.03);
+            box-shadow: 0 0 40px -10px rgb(165 243 252);
+        }
+        
+        .modal-content {
+            animation: modalPop 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        
+        @keyframes modalPop {
+            from {
+                opacity: 0;
+                transform: scale(0.7) translateY(100px);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+        
+        .glass {
+            background: rgba(15, 23, 42, 0.75);
+            backdrop-filter: blur(20px);
+        }
+        
+        canvas#stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+            opacity: 0.6;
+        }
+        
+        .tail-container {
+            font-family: 'Inter', system-ui, sans-serif;
+        }
+        
+        h1, h2 {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+    </style>
+</head>
+<body class="tail-container bg-zinc-950 text-white overflow-x-hidden">
+    <!-- CANVAS ЗВЁЗДЫ  -->
+    <canvas id="stars"></canvas>
+
+    <!-- NAVBAR -->
+    <nav class="fixed top-0 left-0 right-0 z-50 glass border-b border-cyan-500/20">
+        <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+            <!-- LOGO -->
+            <div class="flex items-center gap-3">
+                <div class="w-9 h-9 rounded-2xl bg-gradient-to-br from-cyan-400 to-violet-500 flex items-center justify-center text-2xl font-bold shadow-lg shadow-cyan-500/50">V</div>
+                <div>
+                    <span class="text-3xl font-bold tracking-tighter neon-text">VOID</span>
+                    <span class="text-3xl font-bold tracking-tighter text-cyan-400">DEV</span>
+                </div>
+            </div>
+
+            <!-- DESKTOP MENU -->
+            <div class="hidden md:flex items-center gap-10 text-sm font-medium">
+                <a href="#about" class="hover:text-cyan-400 transition-colors">Обо мне</a>
+                <a href="#skills" class="hover:text-cyan-400 transition-colors">Навыки</a>
+                <a href="#projects" class="hover:text-cyan-400 transition-colors">Проекты</a>
+                <a href="#contact" class="hover:text-cyan-400 transition-colors">Контакты</a>
+            </div>
+
+            <!-- MOBILE HAMBURGER -->
+            <button id="mobile-menu-btn" class="md:hidden text-3xl">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- MOBILE MENU -->
+        <div id="mobile-menu" class="hidden md:hidden glass border-t border-cyan-500/20 px-6 py-6">
+            <div class="flex flex-col gap-6 text-lg font-medium">
+                <a href="#about" class="hover:text-cyan-400 transition-colors">Обо мне</a>
+                <a href="#skills" class="hover:text-cyan-400 transition-colors">Навыки</a>
+                <a href="#projects" class="hover:text-cyan-400 transition-colors">Проекты</a>
+                <a href="#contact" class="hover:text-cyan-400 transition-colors">Контакты</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="min-h-screen flex items-center relative pt-20">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+            <div class="space-y-8">
+                <div class="inline-flex items-center gap-3 px-5 py-2 rounded-3xl border border-cyan-400/30 bg-cyan-950/50 text-cyan-400 text-sm font-medium">
+                    <div class="w-2 h-2 bg-cyan-400 rounded-full animate-pulse"></div>
+                    OPEN TO WORK
+                </div>
+                
+                <h1 class="text-7xl md:text-8xl font-bold leading-none tracking-tighter neon-text">
+                    VOID<span class="text-cyan-400">.</span><br>DEV
+                </h1>
+                
+                <p class="text-2xl text-zinc-400 max-w-lg">
+                    Я создаю цифровые миры из пустоты.<br>
+                    Адаптивные, быстрые и невероятно красивые сайты.
+                </p>
+                
+                <div class="flex flex-wrap gap-5">
+                    <a href="#projects" 
+                       class="px-10 py-5 bg-white text-zinc-950 font-semibold rounded-2xl hover:bg-cyan-400 hover:text-white transition-all flex items-center gap-3 group">
+                        Смотреть проекты
+                        <i class="fa-solid fa-arrow-right group-hover:rotate-45 transition"></i>
+                    </a>
+                    
+                    <a href="#contact" 
+                       class="px-10 py-5 border-2 border-cyan-400 font-semibold rounded-2xl hover:bg-cyan-400/10 transition-all">
+                        Связаться
+                    </a>
+                </div>
+                
+                <div class="flex items-center gap-8 text-sm">
+                    <div>
+                        <span class="text-cyan-400 text-3xl font-bold">50+</span><br>
+                        <span class="text-zinc-500">проектов</span>
+                    </div>
+                    <div>
+                        <span class="text-cyan-400 text-3xl font-bold">12</span><br>
+                        <span class="text-zinc-500">стран клиентов</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- HERO VISUAL -->
+            <div class="relative hidden md:block">
+                <div class="absolute -inset-10 bg-gradient-to-br from-cyan-400/10 via-violet-500/10 to-transparent rounded-[4rem] blur-3xl"></div>
+                <div class="relative bg-zinc-900 border border-cyan-400/20 rounded-3xl p-2 shadow-2xl">
+                    <img src="https://picsum.photos/id/1015/800/600" 
+                         alt="VoidDev preview" 
+                         class="rounded-2xl shadow-inner">
+                    <div class="absolute -bottom-6 -right-6 bg-zinc-950 border border-cyan-400 px-6 py-4 rounded-2xl shadow-xl">
+                        <div class="flex items-center gap-4">
+                            <div class="text-4xl">🚀</div>
+                            <div>
+                                <div class="text-cyan-400 font-bold text-xl">Следующий проект</div>
+                                <div class="text-sm text-zinc-400">уже в разработке</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- SCROLL INDICATOR -->
+        <div class="absolute bottom-10 left-1/2 flex flex-col items-center gap-2 text-xs tracking-widest text-zinc-500">
+            <div class="animate-bounce">↓</div>
+            SCROLL
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="py-32 border-t border-zinc-800">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="grid md:grid-cols-12 gap-16 items-center">
+                <div class="md:col-span-5">
+                    <div class="sticky top-28">
+                        <div class="text-cyan-400 text-sm font-medium tracking-widest mb-3">01 / ОБО МНЕ</div>
+                        <h2 class="text-6xl font-bold leading-none tracking-tighter">
+                            Я — Виктор
+                        </h2>
+                        <div class="h-px w-20 bg-gradient-to-r from-cyan-400 to-transparent my-8"></div>
+                    </div>
+                </div>
+                
+                <div class="md:col-span-7 space-y-8 text-lg text-zinc-300">
+                    <p>
+                        Привет! Меня зовут <span class="text-white font-semibold">Виктор</span>. 
+                        Я — full-stack разработчик с 5+ годами опыта. Специализируюсь на создании 
+                        невероятно быстрых и визуально завораживающих веб-проектов.
+                    </p>
+                    <p>
+                        Каждый сайт — это не просто код. Это цифровой мир, который живёт, дышит 
+                        и решает задачи вашего бизнеса. Я использую современные технологии, 
+                        чтобы ваши идеи выходили за пределы экрана.
+                    </p>
+                    
+                    <div class="flex gap-8 pt-8 border-t border-zinc-800">
+                        <div>
+                            <div class="text-5xl font-bold text-cyan-400">2021</div>
+                            <div class="text-sm text-zinc-500">начало пути</div>
+                        </div>
+                        <div>
+                            <div class="text-5xl font-bold text-cyan-400">∞</div>
+                            <div class="text-sm text-zinc-500">креатив без границ</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="py-32 bg-black/50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-20">
+                <div class="inline text-cyan-400 text-sm font-medium tracking-widest">02 / НАВЫКИ</div>
+                <h2 class="text-6xl font-bold tracking-tighter mt-4">Что я умею</h2>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <!-- Skill cards -->
+                <div class="group bg-zinc-900/70 border border-transparent hover:border-cyan-400/30 p-8 rounded-3xl transition-all">
+                    <div class="text-6xl mb-6">🌐</div>
+                    <div class="text-2xl font-semibold mb-2">Frontend</div>
+                    <div class="text-zinc-400">HTML • CSS • Tailwind • React • Next.js • Framer Motion</div>
+                </div>
+                <div class="group bg-zinc-900/70 border border-transparent hover:border-cyan-400/30 p-8 rounded-3xl transition-all">
+                    <div class="text-6xl mb-6">⚡</div>
+                    <div class="text-2xl font-semibold mb-2">Backend</div>
+                    <div class="text-zinc-400">Node.js • Express • Python • Django • Firebase • Supabase</div>
+                </div>
+                <div class="group bg-zinc-900/70 border border-transparent hover:border-cyan-400/30 p-8 rounded-3xl transition-all">
+                    <div class="text-6xl mb-6">📱</div>
+                    <div class="text-2xl font-semibold mb-2">Mobile</div>
+                    <div class="text-zinc-400">React Native • Flutter • PWA • Адаптивный дизайн</div>
+                </div>
+                <div class="group bg-zinc-900/70 border border-transparent hover:border-cyan-400/30 p-8 rounded-3xl transition-all">
+                    <div class="text-6xl mb-6">🎨</div>
+                    <div class="text-2xl font-semibold mb-2">UI/UX</div>
+                    <div class="text-zinc-400">Figma • Webflow • 3D (Three.js) • Анимации • Микро-интеракции</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="py-32">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex justify-between items-end mb-16">
+                <div>
+                    <div class="text-cyan-400 text-sm font-medium tracking-widest">03 / ПРОЕКТЫ</div>
+                    <h2 class="text-6xl font-bold tracking-tighter">Мои цифровые миры</h2>
+                </div>
+            </div>
+
+            <!-- PROJECTS GRID (будет заполнено JS) -->
+            <div id="projects-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Динамически заполняется через JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="py-32 border-t border-zinc-800 bg-zinc-950">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <div class="text-cyan-400 text-sm font-medium tracking-widest mb-6">04 / СВЯЗАТЬСЯ</div>
+            <h2 class="text-6xl font-bold tracking-tighter mb-10">Давайте создадим<br>что-то невероятное вместе</h2>
+            
+            <div class="flex flex-col md:flex-row gap-8 justify-center">
+                <a href="https://t.me/webdeve1op" target="_blank"
+                   class="flex-1 max-w-xs mx-auto md:mx-0 bg-gradient-to-r from-cyan-400 to-violet-500 text-zinc-950 font-bold py-8 rounded-3xl text-2xl flex items-center justify-center gap-4 hover:scale-105 transition">
+                    <i class="fa-brands fa-telegram text-3xl"></i>
+                    Telegram
+                </a>
+                <a href="https://github.com/vvo1d" target="_blank"
+                   class="flex-1 max-w-xs mx-auto md:mx-0 border-2 border-white py-8 rounded-3xl text-2xl flex items-center justify-center gap-4 hover:bg-white hover:text-zinc-950 transition">
+                    <i class="fa-brands fa-github text-3xl"></i>
+                    GitHub
+                </a>
+            </div>
+            
+            <p class="mt-16 text-zinc-500 text-sm">
+                Или напишите мне напрямую: 
+                <a href="mailto:victor@vo1d.ru" class="text-cyan-400 underline">victor@vo1d.ru</a>
+            </p>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-12 border-t border-zinc-800 text-center text-xs text-zinc-500">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div>© 2026 VoidDev. Все права защищены.</div>
+            <!-- <div class="flex gap-6">
+                <a href="#" class="hover:text-cyan-400">Instagram</a>
+                <a href="#" class="hover:text-cyan-400">Behance</a>
+                <a href="#" class="hover:text-cyan-400">Dribbble</a>
+            </div> -->
+            <div>Сделано с ❤️ и кучей кофе</div>
+        </div>
+    </footer>
+
+    <!-- PROJECT MODAL -->
+    <div id="project-modal" class="hidden fixed inset-0 bg-black/95 z-[9999] flex items-center justify-center p-6">
+        <div class="modal-content bg-zinc-900 w-full max-w-7xl rounded-3xl overflow-hidden border border-cyan-400/30 shadow-2xl">
+            <!-- HEADER MODAL -->
+            <div class="flex items-center justify-between px-8 py-6 border-b border-zinc-800">
+                <div id="modal-title" class="text-3xl font-bold"></div>
+                <div class="flex items-center gap-4">
+                    <button onclick="openInNewTab()" 
+                            class="px-6 py-3 text-sm border border-cyan-400 rounded-2xl hover:bg-cyan-400 hover:text-black transition">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i> Открыть в новой вкладке
+                    </button>
+                    <button onclick="closeModal()" 
+                            class="w-12 h-12 flex items-center justify-center text-3xl hover:text-cyan-400 transition">
+                        ✕
+                    </button>
+                </div>
+            </div>
+            
+            <!-- IFRAME CONTAINER -->
+            <div class="relative">
+                <div id="modal-loading" class="absolute inset-0 flex items-center justify-center bg-black/70 z-10">
+                    <div class="w-12 h-12 border-4 border-cyan-400 border-t-transparent rounded-full animate-spin"></div>
+                </div>
+                <iframe id="modal-iframe" 
+                        class="w-full h-[82vh] bg-zinc-950"
+                        frameborder="0"
+                        allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Tailwind script
+        function initializeTailwind() {
+            // Уже инициализировано через CDN
+        }
+
+        // PROJECTS DATA
+        const projects = [
+        {
+            id: 1,
+            title: "Food",
+            desc: "Лендинг для сети ресторанов с 3D анимациями и интерактивными элементами",
+            tags: ["HTML", "CSS", "JS"],
+            image: "/img/food.png",   // можно заменить на ./assets/nebula.jpg
+            demoUrl: "./sites/Food/index.html"
+        },
+        {
+            id: 2,
+            title: "Noir PS5 Club",
+            desc: "NOIR лендинг для PS5 клуба с тёмным режимом и неоновыми акцентами",
+            tags: ["React", "TypeScript", "Recharts"],
+            image: "/img/noir.png",
+            demoUrl: "./sites/PS5-club/index.html"
+        },
+        {
+            id: 3,
+            title: "Starbucks",
+            desc: "Сайт цифрового агентства с параллакс-эффектами и видео-фоном",
+            tags: ["HTML", "CSS", "GSAP"],
+            image: "/img/starbucks.png",
+            demoUrl: "./sites/StarBucks/index.html"
+        },
+        {
+            id: 4,
+            title: "Wealthfront",
+            desc: "Лендинг для финансовой платформы с адаптивным дизайном",
+            tags: ["Framer", "Webflow", "GSAP"],
+            image: "/img/wealthfront.png",
+            demoUrl: "./sites/Wealthfront/index.html"
+        }
+    ];
+
+        // РЕНДЕР ПРОЕКТОВ
+        function renderProjects() {
+            const container = document.getElementById('projects-grid');
+            container.innerHTML = '';
+            
+            projects.forEach(project => {
+                const card = document.createElement('div');
+                card.className = `project-card bg-zinc-900 rounded-3xl overflow-hidden cursor-pointer border border-transparent hover:border-cyan-400/30`;
+                card.innerHTML = `
+                    <div class="relative">
+                        <img src="${project.image}" class="w-full h-64 object-cover">
+                        <div class="absolute top-4 right-4 bg-black/70 backdrop-blur px-4 py-1 rounded-2xl text-xs font-medium flex gap-1">
+                            ${project.tags.map(tag => `<span class="text-cyan-300">${tag}</span>`).join('')}
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-3xl font-semibold mb-3">${project.title}</h3>
+                        <p class="text-zinc-400 mb-6">${project.desc}</p>
+                        <button onclick="event.stopImmediatePropagation(); openProject(${project.id})" 
+                                class="w-full py-5 bg-cyan-400 hover:bg-white text-zinc-950 font-bold rounded-2xl transition">
+                            ОТКРЫТЬ ПРОЕКТ
+                        </button>
+                    </div>
+                `;
+                card.addEventListener('click', () => openProject(project.id));
+                container.appendChild(card);
+            });
+        }
+
+        // ОТКРЫТЬ ПРОЕКТ В МОДАЛЬНОМ ОКНЕ
+        let currentProject = null;
+        
+        function openProject(id) {
+            currentProject = projects.find(p => p.id === id);
+            if (!currentProject) return;
+            
+            document.getElementById('modal-title').textContent = currentProject.title;
+            const iframe = document.getElementById('modal-iframe');
+            const loading = document.getElementById('modal-loading');
+            
+            iframe.src = currentProject.demoUrl;
+            loading.style.display = 'flex';
+            
+            // Скрываем лоадер после загрузки
+            iframe.onload = () => {
+                loading.style.display = 'none';
+            };
+            
+            document.getElementById('project-modal').classList.remove('hidden');
+            document.getElementById('project-modal').classList.add('flex');
+            
+            // Запрет скролла тела
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeModal() {
+            const modal = document.getElementById('project-modal');
+            const iframe = document.getElementById('modal-iframe');
+            
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            iframe.src = ''; // очищаем iframe
+            document.body.style.overflow = 'visible';
+        }
+        
+        function openInNewTab() {
+            if (currentProject) {
+                window.open(currentProject.demoUrl, '_blank');
+            }
+        }
+
+        // CANVAS ЗВЁЗДЫ
+        function createStars() {
+            const canvas = document.getElementById('stars');
+            const ctx = canvas.getContext('2d');
+            
+            function resize() {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            }
+            resize();
+            window.addEventListener('resize', resize);
+            
+            const stars = [];
+            for (let i = 0; i < 280; i++) {
+                stars.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height,
+                    size: Math.random() * 2.5 + 0.8,
+                    speed: Math.random() * 0.015 + 0.005
+                });
+            }
+            
+            function animate() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                
+                stars.forEach(star => {
+                    ctx.fillStyle = '#a5f3fc';
+                    ctx.globalAlpha = Math.sin(Date.now() * star.speed) * 0.4 + 0.6;
+                    ctx.fillRect(star.x, star.y, star.size, star.size);
+                    
+                    // лёгкое движение
+                    star.x += Math.sin(Date.now() * 0.0001) * 0.1;
+                });
+                
+                requestAnimationFrame(animate);
+            }
+            animate();
+        }
+
+        // MOBILE MENU
+        function initMobileMenu() {
+            const btn = document.getElementById('mobile-menu-btn');
+            const menu = document.getElementById('mobile-menu');
+            
+            btn.addEventListener('click', () => {
+                menu.classList.toggle('hidden');
+                btn.innerHTML = menu.classList.contains('hidden') 
+                    ? '<i class="fa-solid fa-bars"></i>' 
+                    : '<i class="fa-solid fa-xmark"></i>';
+            });
+        }
+
+        // ESC для закрытия модалки
+        document.addEventListener('keydown', function(e) {
+            if (e.key === "Escape") {
+                const modal = document.getElementById('project-modal');
+                if (!modal.classList.contains('hidden')) closeModal();
+            }
+        });
+
+        // ИНИЦИАЛИЗАЦИЯ
+        window.onload = function() {
+            initializeTailwind();
+            renderProjects();
+            createStars();
+            initMobileMenu();
+            
+            // Плавный скролл для ссылок
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    if (this.getAttribute('href') === '#') return;
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) target.scrollIntoView({ behavior: 'smooth' });
+                });
+            });
+            
+        };
+    </script>
+</body>
+</html>

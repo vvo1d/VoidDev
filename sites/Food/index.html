@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Food Exxe Relo — Видовой ресторан на Крестовском</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header>
+      <div class="header-container">
+        <a href="#" class="logo">FOOD</a>
+
+        <nav>
+          <ul>
+            <li><a href="#about" class="active">О ресторане</a></li>
+            <li><a href="#menu">Меню</a></li>
+            <li><a href="#delivery">Доставка</a></li>
+            <li><a href="#payment">Оплата</a></li>
+            <li><a href="#booking">Бронь столика</a></li>
+          </ul>
+        </nav>
+
+        <div class="header-actions">
+          <a href="tel:+777777777" class="phone">+7 (777) 777-77-77</a>
+          <a href="#booking" class="btn-reserve">Бронь столика</a>
+          <div class="hamburger" id="hamburger">
+            <i class="fas fa-bars"></i>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Мобильное меню -->
+    <div class="mobile-menu" id="mobileMenu">
+      <div
+        style="
+          position: absolute;
+          top: 40px;
+          right: 5%;
+          font-size: 3rem;
+          color: white;
+          cursor: pointer;
+        "
+        id="closeMenu"
+      >
+        ×
+      </div>
+      <a href="#about">О ресторане</a>
+      <a href="#menu">Меню</a>
+      <a href="#delivery">Доставка</a>
+      <a href="#payment">Оплата</a>
+      <a href="#booking">Бронь столика</a>
+      <a href="tel:+77777777777">+7 (777) 777-77-77</a>
+    </div>
+
+    <!-- Пустое место под фикс. шапку -->
+    <div style="height: 90px"></div>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="hero">
+      <div class="hero-bg"></div>
+      <div class="hero-overlay"></div>
+
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1 class="hero-title">Food <span>Exxe Relo</span></h1>
+          <p class="hero-subtitle">
+            Видовой ресторан на Крестовском острове<br />
+            с панорамным видом на Финский залив
+          </p>
+
+          <div class="hero-info">
+            <div class="info-item">
+              <i class="far fa-clock"></i>
+              <span>Пн–Вс: 12:00 – 00:00<br />Пт–Сб до 03:00</span>
+            </div>
+            <div class="info-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>Северная дорога, 11<br />Крестовский остров</span>
+            </div>
+          </div>
+
+          <a href="#booking" class="btn-reserve hero-btn">
+            Забронировать столик
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- MENU SECTION -->
+    <section class="menu-section" id="menu">
+      <div class="container">
+        <div class="section-header">
+          <h2>Меню</h2>
+          <p>Авторская кухня с видом на Финский залив</p>
+        </div>
+
+        <!-- Табы категорий -->
+        <div class="menu-tabs">
+          <button class="tab-btn active" data-tab="main">Основное меню</button>
+          <button class="tab-btn" data-tab="bar">Барная карта</button>
+          <button class="tab-btn" data-tab="desserts">Десерты</button>
+        </div>
+
+        <!-- Контент табов -->
+        <div class="menu-content">
+          <!-- Основное меню -->
+          <div class="tab-panel active" id="main">
+            <div class="menu-grid">
+              <!-- Пример блюда 1 -->
+              <div class="menu-item">
+                <div class="menu-item-img">
+                  <img
+                    src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                    alt="Стейк рибай"
+                  />
+                  <div class="menu-overlay">
+                    <span class="menu-hit">Хит</span>
+                  </div>
+                </div>
+                <div class="menu-item-info">
+                  <div class="menu-item-top">
+                    <h3>Рибай 300 г</h3>
+                    <span class="price">1850 ₽</span>
+                  </div>
+                  <p class="description">
+                    Мраморная говядина, приготовленная на открытом огне, с
+                    соусом трюфель-розмарин
+                  </p>
+                </div>
+              </div>
+
+              <!-- Пример блюда 2 -->
+              <div class="menu-item">
+                <div class="menu-item-img">
+                  <img
+                    src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                    alt="Салат с лососем"
+                  />
+                </div>
+                <div class="menu-item-info">
+                  <div class="menu-item-top">
+                    <h3>Тёплый салат с копчёным лососем</h3>
+                    <span class="price">890 ₽</span>
+                  </div>
+                  <p class="description">
+                    Микс салатов, авокадо, черри, перепелиные яйца, соус на
+                    основе йогурта
+                  </p>
+                </div>
+              </div>
+
+              <!-- Ещё 2–4 карточки по желанию -->
+              <div class="menu-item">
+                <div class="menu-item-img">
+                  <img
+                    src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                    alt="Паста карбонара"
+                  />
+                </div>
+                <div class="menu-item-info">
+                  <div class="menu-item-top">
+                    <h3>Спагетти карбонара</h3>
+                    <span class="price">720 ₽</span>
+                  </div>
+                  <p class="description">
+                    Классика с гуанчиале, пекорино романо и свежемолотым перцем
+                  </p>
+                </div>
+              </div>
+
+              <div class="menu-item">
+                <div class="menu-item-img">
+                  <img
+                    src="https://images.unsplash.com/photo-1606857521015-7f9fcf423740?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                    alt="Ризотто"
+                  />
+                </div>
+                <div class="menu-item-info">
+                  <div class="menu-item-top">
+                    <h3>Ризотто с белыми грибами</h3>
+                    <span class="price">950 ₽</span>
+                  </div>
+                  <p class="description">
+                    Арборио, пармезан 36 мес., трюфельное масло
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Барная карта (пока заглушка) -->
+          <div class="tab-panel" id="bar">
+            <div class="menu-grid">
+              <div class="menu-item">
+                <div class="menu-item-img">
+                  <img
+                    src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                    alt="Коктейль"
+                  />
+                </div>
+                <div class="menu-item-info">
+                  <div class="menu-item-top">
+                    <h3>Negroni</h3>
+                    <span class="price">650 ₽</span>
+                  </div>
+                  <p class="description">
+                    Джин, красный вермут, кампари, апельсиновая цедра
+                  </p>
+                </div>
+              </div>
+              <!-- Добавь ещё коктейли/вина/пиво по аналогии -->
+            </div>
+          </div>
+
+          <!-- Десерты (заглушка) -->
+          <div class="tab-panel" id="desserts">
+            <p
+              style="
+                text-align: center;
+                color: #aaa;
+                font-size: 1.3rem;
+                padding: 100px 0;
+              "
+            >
+              Скоро здесь появятся наши фирменные десерты...
+            </p>
+          </div>
+        </div>
+
+        <div class="menu-actions">
+          <a href="#" class="btn-reserve">Скачать полное меню (PDF)</a>
+          <a href="tel:+77777777777" class="btn-outline"
+            >Задать вопрос по меню</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-container">
+        <div class="footer-col">
+          <a href="#" class="footer-logo">FOOD <span>Exxe Relo</span></a>
+          <p class="footer-desc">
+            Видовой ресторан на Крестовском острове с панорамным видом на
+            Финский залив. Европейская и авторская кухня, уютная атмосфера и
+            лучший сервис в Санкт-Петербурге.
+          </p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-vk"></i></a>
+            <a href="#"><i class="fab fa-telegram"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h3>Меню</h3>
+          <ul>
+            <li><a href="#">Основное меню</a></li>
+            <li><a href="#">Барная карта</a></li>
+            <li><a href="#">Бизнес-ланч</a></li>
+            <li><a href="#">Детское меню</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3>Услуги</h3>
+          <ul>
+            <li><a href="#">Доставка</a></li>
+            <li><a href="#">Банкетные залы</a></li>
+            <li><a href="#">Бронь столика</a></li>
+            <li><a href="#">Оплата</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3>Контакты</h3>
+          <ul>
+            <li>Санкт-Петербург, Крестовский остров</li>
+            <li>Северная дорога, 11</li>
+            <li><a href="tel:+77777777777">+7 (777) 777-77-77</a></li>
+            <li>
+              <a href="mailto:info@foodexxerelo.ru">info@foodexxerelo.ru</a>
+            </li>
+            <li>Вс–Чт 12:00 – 00:00</li>
+            <li>Пт–Сб 12:00 – 03:00</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        © 2026 Food Exxe Relo. Все права защищены. Дизайн — e-plu
+      </div>
+    </footer>
+
+    <script>
+      const ham = document.getElementById("hamburger");
+      const menu = document.getElementById("mobileMenu");
+      const close = document.getElementById("closeMenu");
+
+      ham.addEventListener("click", () => menu.classList.add("active"));
+      close.addEventListener("click", () => menu.classList.remove("active"));
+
+      document.querySelectorAll(".tab-btn").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          // Убираем active у всех кнопок и панелей
+          document
+            .querySelectorAll(".tab-btn")
+            .forEach((b) => b.classList.remove("active"));
+          document
+            .querySelectorAll(".tab-panel")
+            .forEach((p) => p.classList.remove("active"));
+
+          // Добавляем active выбранной
+          btn.classList.add("active");
+          document.getElementById(btn.dataset.tab).classList.add("active");
+        });
+      });
+    </script>
+  </body>
+</html>
