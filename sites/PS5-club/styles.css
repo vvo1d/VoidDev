@@ -185,6 +185,8 @@ h2 {
   background: linear-gradient(135deg, #0a0000, #100005);
 }
 
+
+
 .reserve-subtitle {
   text-align: center;
   font-size: 1.4rem;
@@ -272,4 +274,11 @@ footer {
   h2 { font-size: 3.6rem; }
   header p { font-size: 1.3rem; }
   .btn-red { padding: 14px 40px; font-size: 1.15rem; }
+
+  h2{
+    font-size: 25px;
+  }
+  .btn-red{
+    margin-bottom: 15px;
+  }
 }

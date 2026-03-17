@@ -1,0 +1,859 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap');
+
+* {
+  font-family: 'Inter', system-ui, sans-serif;
+
+}
+
+.orange-gradient {
+  background: linear-gradient(90deg, #f97316, #fbbf24);
+}
+
+.writing-vertical {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+}
+
+
+
+/* Tailwind custom config */
+@layer base {
+  .hero-bg {
+    
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.85));
+
+  }
+}
+
+.hero {
+    background: url('/img/hero-bg.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+      
+    background-color: #191B20;
+
+}
+
+.circle {
+    display: block;
+    width: 300px;
+    height: 300px;
+    background-image: url('/img/hero-bage.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    bottom: 320px;
+
+
+}
+
+.cirlce__text { 
+    padding: 20px;
+}
+
+.writing-vertical {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  transform: rotate(180deg);
+}
+
+@layer utilities {
+  .shadow-telegram {
+    filter: drop-shadow(0 15px 25px rgba(255, 107, 0, 0.45));
+  }
+}
+
+
+/* hero - Иконки */
+
+.hero-icon {
+    width: 40px;
+    height: 40px;
+    background-origin: border-box;
+    background-position: center;
+    background-size: cover;
+}
+
+.microfone {
+
+    background-image: url('/img/header-icon-1.svg');
+}
+
+.wine-bottle {
+    width: 40px;
+    height: 40px;
+    background-origin: border-box;
+    background-position: center;
+    background-size: cover;
+    background-image: url('/img/header-icon-2.svg');
+}
+
+.hand-holding-dollar {
+    width: 40px;
+    height: 40px;
+    background-origin: border-box;
+    background-position: center;
+    background-size: cover;
+    background-image: url('/img/header-icon-3.svg');
+}
+
+.party-horn {
+    width: 40px;
+    height: 40px;
+    background-origin: border-box;
+    background-position: center;
+    background-size: cover;
+    background-image: url('/img/header-icon-4.svg');
+
+}
+
+
+
+/* ===================== НАШИ ЗАЛЫ ===================== */
+
+#halls {
+  background-color: 131517;
+}
+
+#halls .hall-tab {
+  position: relative;
+  padding-bottom: 8px;
+}
+
+#halls .hall-tab.active {
+  color: #f97316;
+}
+
+#halls .hall-tab.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(to right, #f97316, #fbbf24);
+  border-radius: 3px;
+}
+
+.hide-scrollbar {
+  scrollbar-width: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.thumbnail {
+  transition: all 0.3s ease;
+}
+
+.thumbnail:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(249, 115, 22, 0.3);
+}
+
+/* Плавная смена главного фото */
+#main-hall-image {
+  transition: opacity 0.4s ease;
+}
+
+
+/* ===================== ПРЕИМУЩЕСТВА ===================== */
+
+#advantages {
+  position: relative;
+  background-color: #191B20;
+}
+
+
+.advantage-left {
+z-index: 9;
+max-width: 80%;
+}
+
+#advantages h2 {
+  font-size: 3rem;
+}
+
+.advantage-card {
+  background-color: #282B32;
+  transition: all 0.3s ease;
+}
+
+.advantage-card:nth-child(even) {
+  background-color: #202124;
+}
+
+.advantage-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(249, 115, 22, 0.15);
+}
+
+.advantage-card:nth-child(even) h3,
+.advantage-card:nth-child(even) p,
+.advantage-card:nth-child(even) li {
+  color: #e5e5e5;
+}
+/* Микрофон позиционирование */
+#mic-image {
+  /* z-index: 10  ; */
+  /* max-height: 520px; */
+  object-fit: contain;
+  filter: drop-shadow(30px 20px 40px rgba(0, 0, 0, 0.6));
+}
+
+
+
+/* ===================== СЛАЙДЕР ===================== */
+#booking {
+  background-color: #09090b;
+}
+
+#steps-slider {
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+}
+
+#steps-slider::-webkit-scrollbar {
+  display: none;
+}
+
+.slide-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.3s ease;
+  -webkit-user-drag: none;
+  flex-shrink: 0;
+}
+
+.phone-frame {
+  width: 100%;
+  max-width: 100%;
+  border-radius: 48px;
+  border: 12px solid #111;
+  box-shadow: 0 25px 60px -15px rgb(0 0 0 / 0.6);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  display: block;
+  position: relative;
+  overflow: hidden;
+}
+
+.slide-wrapper:hover .phone-frame {
+  transform: translateY(-4px);
+  box-shadow: 0 30px 70px -10px rgba(249, 115, 22, 0.2);
+}
+
+/* Номер шага */
+.step-number-wrapper {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 30;
+}
+
+.step-number {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #f97316, #fb923c);
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 20px;
+  border-radius: 50%;
+  border: 4px solid #191B20;
+  box-shadow: 0 8px 24px rgba(249, 115, 22, 0.4);
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Активный слайд - больший номер */
+.slide-wrapper.active .step-number {
+  width: 56px;
+  height: 56px;
+  font-size: 24px;
+  background: linear-gradient(135deg, #fbbf24, #f97316);
+  box-shadow: 
+    0 0 30px rgba(251, 191, 36, 0.8),
+    0 12px 35px rgba(249, 115, 22, 0.6);
+  transform: scale(1.2);
+}
+
+/* Стрелки слайдера */
+.slider-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.6);
+  border: 2px solid rgba(249, 115, 22, 0.4);
+  color: white;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  z-index: 30;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  opacity: 0;
+}
+
+.slider-arrow:hover {
+  background: #f97316;
+  border-color: #f97316;
+  transform: translateY(-50%) scale(1.1);
+}
+
+.group:hover .slider-arrow {
+  opacity: 1;
+}
+
+.slider-arrow i {
+  pointer-events: none;
+}
+
+#pagination {
+  color: #ffffff;
+  transition: all 0.3s ease;
+}
+
+
+
+/* ===================== TABLET (до 1024) ===================== */
+
+@media (max-width: 1024px) {
+  .advantage-left {
+    max-width: 100%;
+  }
+
+  
+}
+
+
+
+/* ===================== MOBILE (до 768px) ===================== */
+@media (max-width: 768px) {
+
+
+    .main_header {
+        font-size: 2rem;
+    }
+
+    /* Убираем старую кнопку из верхней строки */
+  header .hidden.md\\:flex {
+    display: none !important;
+  }
+
+  /* Кнопка под логотипом — красиво и на всю ширину */
+  header .md\\:hidden.mt-6 button {
+    font-size: 1.15rem;
+    padding-top: 17px;
+    padding-bottom: 17px;
+  }
+
+  /* Гамбургер — чуть больше и красивее */
+  .mobile-hamburger {
+    width: 48px;
+    height: 48px;
+    border-radius: 9999px;
+  }
+
+  /* Небольшой отступ сверху страницы (чтобы не перекрывал фиксированный хедер) */
+  #hero {
+    padding-top: 140px !important;   /* +50px из-за новой кнопки под логотипом */
+  }
+
+  
+  .mobile-hamburger { 
+    display: flex !important; 
+    width: 42px; height: 42px; 
+    align-items: center; justify-content: center;
+    background: rgba(255,255,255,0.1);
+    border-radius: 50%;
+  }
+
+  #hero {
+    min-height: 100vh;
+    padding-top: 90px !important;
+    background-position: center 30% !important;
+  }
+
+  /* Основной контент — добавляем отступ снизу, чтобы НЕ перекрывал нижнюю полосу */
+  #hero .max-w-screen-2xl.mx-auto.relative.z-10 {
+    padding-bottom: 320px !important;   /* ← ГЛАВНЫЙ ФИКС */
+  }
+
+  #hero h1 {
+    font-size: 2.75rem !important;
+    line-height: 1.05 !important;
+  }
+  
+  #hero p.text-5xl {
+    font-size: 2.85rem !important;
+    line-height: 1.05 !important;
+    margin-top: 12px;
+  }
+
+  #hero .inline-block.bg-zinc-900 {
+    font-size: 15px;
+    padding: 8px 18px;
+    margin-top: 20px;
+  }
+
+  /* Чекбоксы в колонку с красивым фоном */
+  #hero .grid.grid-cols-1.sm\\:grid-cols-3 {
+    grid-template-columns: 1fr !important;
+    gap: 18px;
+    margin-top: 32px;
+  }
+  
+  #hero .flex.items-start.gap-4 {
+    background: rgba(255,255,255,0.08);
+    padding: 14px 18px;
+    border-radius: 16px;
+    align-items: center;
+  }
+  
+  #hero .flex.items-start.gap-4 i {
+    font-size: 28px;
+    color: #10b981; /* ярко-зелёный как на скрине */
+  }
+
+  /* Круг 24/7 */
+  #hero .absolute.-left-8.bottom-28 {
+    left: 50% !important;
+    transform: translateX(-50%);
+    bottom: 210px !important;
+    width: 152px;
+    height: 152px;
+    border-width: 10px;
+  }
+  
+  #hero .absolute.-left-8.bottom-28 .text-7xl {
+    font-size: 4.3rem;
+  }
+
+  /* Кнопка на всю ширину */
+  #hero button.orange-gradient {
+    width: 100% !important;
+    font-size: 1.25rem;
+    padding: 18px 24px;
+    margin-top: 40px;
+    border-radius: 9999px;
+  }
+
+  /* Девушка */
+  #hero .hidden.lg\\:block img {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 68%;
+    z-index: 5;
+    filter: drop-shadow(0 30px 60px rgba(0,0,0,0.6));
+  }
+
+  #hero .absolute.bottom-0 {
+    position: absolute;
+    bottom: 0;
+    z-index: 30;
+    padding-bottom: 24px;
+  }
+  
+  #hero .absolute.bottom-0 .grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 16px;
+    padding: 0 20px;
+  }
+  
+  #hero .absolute.bottom-0 .flex.items-center.gap-4 {
+    background: #18181b;
+    padding: 16px;
+    border-radius: 16px;
+  }
+  
+  #hero .absolute.bottom-0 .flex.items-center.gap-4 i {
+    font-size: 32px;
+  }
+
+
+
+
+  /* === СЕКЦИЯ НАШИ ЗАЛЫ === */
+
+    #halls {
+      padding-top: 60px;
+      padding-bottom: 80px;
+    }
+    
+    #halls h2 {
+      font-size: 2.8rem;
+    }
+    
+    /* Табы — горизонтальный скролл */
+    #halls .flex.gap-8 {
+      gap: 20px;
+      padding-bottom: 12px;
+    }
+    
+    /* Миниатюры — 2 в ряд */
+    #halls .grid.grid-cols-2.md\\:grid-cols-4 {
+      grid-template-columns: repeat(2, 1fr) !important;
+      gap: 12px;
+    }
+    
+    #halls .thumbnail img {
+      height: 120px;
+    }
+    
+    /* Пагинация и кнопка на всю ширину */
+    #halls .flex.items-center.gap-6 {
+      justify-content: center;
+    }
+    
+    #halls button.orange-gradient {
+      width: 100%;
+    }
+  
+
+    
+      
+    #advantages h2 {
+      font-size: 1.5rem;
+  }
+      #advantages .grid {
+      grid-template-columns: repeat(2, 1fr) !important;
+      gap: 16px;
+    }
+    
+    .advantage-card {
+      padding: 24px 20px;
+    }
+    
+    .advantage-card h3 {
+      font-size: 1.1rem;
+    }
+    
+    #mic-image {
+      display: none !important;
+    }
+    
+    #advantages button {
+      width: 100%;
+      max-width: 320px;
+  }
+
+  .slide { min-width: 260px; }
+  .phone-frame { max-width: 280px; }
+
+  /* === FAQ И СЛАЙДЕР НА МОБИЛЕ === */
+  #booking h2 {
+    font-size: 2.2rem;
+  }
+
+  #booking p {
+    font-size: 0.95rem;
+  }
+
+  #steps-slider {
+    gap: 16px;
+  }
+
+  .slide-wrapper {
+    min-width: 260px;
+  }
+
+  .phone-frame {
+    max-width: 100%;
+    border-radius: 40px;
+  }
+
+  .step-number-wrapper {
+    top: 10px;
+    right: 10px;
+  }
+
+  .step-number {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+    border: 3px solid #191B20;
+  }
+
+  .slide-wrapper.active .step-number {
+    width: 48px;
+    height: 48px;
+    font-size: 20px;
+  }
+
+  .slider-arrow {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+    opacity: 1;
+  }
+
+  #pagination {
+    gap: 12px;
+    font-size: 0.95rem;
+  }
+}
+
+/* Супер-маленькие экраны */
+@media (max-width: 380px) {
+  #hero h1 { font-size: 2.4rem !important; }
+  #hero p.text-5xl { font-size: 2.5rem !important; }
+  #hero .absolute.-left-8.bottom-28 { bottom: 185px !important; }
+  #hero .max-w-screen-2xl.mx-auto.relative.z-10 {
+    padding-bottom: 300px !important;
+  }
+
+  #halls h2 {
+    font-size: 2.4rem;
+  }
+
+  #advantages .grid {
+    grid-template-columns: 1fr !important;
+    gap: 14px;
+  }
+  
+  #advantages h2 {
+    font-size: 1rem;
+  }
+  
+  .advantage-card {
+    padding: 20px;
+  }
+  
+  .advantage-card i {
+    font-size: 42px;
+  }
+  
+  .advantage-card h3 {
+    font-size: 1rem;
+  }
+  
+  #advantages button {
+    font-size: 1.1rem;
+    padding: 18px 24px;
+  }
+
+  #booking h2 {
+    font-size: 1.8rem;
+  }
+
+  .slide-wrapper {
+    min-width: 240px;
+  }
+
+  .step-number {
+    width: 36px;
+    height: 36px;
+    font-size: 14px;
+    border: 2px solid #191B20;
+  }
+
+  .slide-wrapper.active .step-number {
+    width: 44px;
+    height: 44px;
+    font-size: 18px;
+  }
+
+  #pagination {
+    font-size: 0.85rem;
+  }
+}
+
+/* ===================== FAQ АККОРДИОН ===================== */
+
+.faq-item {
+  background-color: #282B32;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+  background-color: #2f3238;
+  box-shadow: 0 8px 20px rgba(249, 115, 22, 0.1);
+}
+
+.faq-button {
+  padding: 1.5rem 1.75rem;
+  background: transparent;
+  border: none;
+  color: inherit;
+  font-family: inherit;
+  cursor: pointer;
+  gap: 1rem;
+  user-select: none;
+}
+
+.faq-button i {
+  flex-shrink: 0;
+  font-size: 1.25rem;
+  transition: transform 0.3s ease;
+}
+
+.faq-button.active i {
+  transform: rotate(180deg);
+}
+
+.faq-content {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  padding: 0 1.75rem;
+}
+
+.faq-content.active {
+  max-height: 300px;
+  opacity: 1;
+  padding: 0 1.75rem 1.5rem 1.75rem;
+}
+
+#faq {
+  background-color: #131517;
+}
+
+#faq h2 {
+  font-size: 3rem;
+}
+
+/* Адаптив FAQ */
+@media (max-width: 768px) {
+  .faq-button {
+    padding: 1.25rem 1.5rem;
+    font-size: 0.95rem;
+  }
+
+  .faq-button i {
+    font-size: 1.1rem;
+  }
+
+  .faq-content {
+    padding: 0 1.5rem;
+  }
+
+  .faq-content.active {
+    padding: 0 1.5rem 1.25rem 1.5rem;
+  }
+
+  #faq h2 {
+    font-size: 2rem;
+  }
+
+  #faq p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 380px) {
+  #faq h2 {
+    font-size: 1.75rem;
+  }
+
+  .faq-button {
+    padding: 1rem 1.25rem;
+    font-size: 0.9rem;
+  }
+
+  .faq-content.active {
+    max-height: 350px;
+  }
+}
+
+/* ===================== ФУТЕР ===================== */
+footer {
+  background-color: #0a0a0a;
+  margin-top: 80px;
+}
+
+footer h3 {
+  color: #ffffff;
+  font-size: 0.875rem;
+  letter-spacing: 0.5px;
+}
+
+footer a {
+  transition: all 0.3s ease;
+}
+
+footer a:hover {
+  color: #f97316;
+}
+
+/* Кнопка скролла вверх */
+.scroll-to-top {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  width: 52px;
+  height: 52px;
+  background: linear-gradient(135deg, #f97316, #fb923c);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  z-index: 45;
+  box-shadow: 0 10px 30px rgba(249, 115, 22, 0.4);
+}
+
+.scroll-to-top:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(249, 115, 22, 0.6);
+}
+
+.scroll-to-top.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Адаптив футера */
+@media (max-width: 768px) {
+  footer {
+    margin-top: 60px;
+  }
+
+  footer .grid {
+    gap: 8;
+  }
+
+  footer h3 {
+    font-size: 0.875rem;
+  }
+
+  .scroll-to-top {
+    width: 48px;
+    height: 48px;
+    font-size: 20px;
+    bottom: 30px;
+    right: 30px;
+  }
+}
+
+@media (max-width: 380px) {
+  footer {
+    padding: 40px 20px;
+  }
+
+  .scroll-to-top {
+    width: 44px;
+    height: 44px;
+    font-size: 18px;
+    bottom: 20px;
+    right: 20px;
+  }
+}

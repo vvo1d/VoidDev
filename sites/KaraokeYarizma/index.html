@@ -1,0 +1,806 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>YARIZMA — Караоке залы Москва</title>
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+
+    <!-- Google Font Inter -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap"
+    />
+
+    <!-- Наш CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body class="bg-zinc-950 text-white overflow-x-hidden">
+    <!-- HEADER -->
+    <header
+      class="fixed top-0 left-0 right-0 bg-black/95 backdrop-blur-md z-50 border-b border-white/10"
+    >
+      <div class="max-w-screen-2xl mx-auto px-6 py-5">
+        <!-- Верхняя строка (логотип + гамбургер) -->
+        <div class="flex items-center justify-between">
+          <!-- Logo -->
+          <a href="#" class="text-4xl font-black tracking-[-2px]">
+            <span class="text-orange-500">Y</span
+            ><span class="text-amber-400">ARIZMA</span>
+          </a>
+
+          <!-- Десктопные кнопки -->
+          <div class="hidden md:flex items-center gap-4">
+            <button
+              onclick="
+                document
+                  .getElementById('halls')
+                  .scrollIntoView({ behavior: 'smooth' })
+              "
+              class="px-8 py-3 border border-white/60 rounded-full text-sm font-medium hover:bg-white/10 transition"
+            >
+              НАШИ ЗАЛЫ
+            </button>
+            <button
+              onclick="window.open('https://t.me/your_bot', '_blank')"
+              class="bg-white text-black font-semibold px-8 py-3 rounded-full hover:scale-105 transition"
+            >
+              ЗАБРОНИРОВАТЬ
+            </button>
+          </div>
+
+          <!-- Мобильный гамбургер -->
+          <button
+            onclick="toggleMenu()"
+            class="mobile-hamburger md:hidden w-11 h-11 bg-zinc-800 hover:bg-zinc-700 transition rounded-2xl flex items-center justify-center"
+          >
+            <i class="fa-solid fa-bars text-2xl"></i>
+          </button>
+        </div>
+
+        <!-- МОБИЛЬНАЯ КНОПКА "ЗАБРОНИРОВАТЬ" — прямо под логотипом -->
+        <div class="md:hidden mt-6">
+          <button
+            onclick="window.open('https://t.me/your_bot', '_blank')"
+            class="w-full orange-gradient text-xl font-bold py-5 rounded-3xl shadow-2xl shadow-orange-600/40 active:scale-95 transition"
+          >
+            ЗАБРОНИРОВАТЬ
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero relative min-h-screen flex items-center pt-24">
+      <div
+        class="max-w-screen-2xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
+      >
+
+        <!-- Левая колонка -->
+        <div class="space-y-10">
+          <h1
+            class="main_header lg:text-6xl font-black leading-none tracking-tight"
+          >
+            АРЕНДУЙ КАРАОКЕ-ЗАЛ<br />ДО 10 ЧЕЛОВЕК
+          </h1>
+
+          <p class="main_header lg:text-6xl font-black text-white leading-none">
+            ВОЗЬМИ АЛКОГОЛЬ<br />И ЕДУ С СОБОЙ
+          </p>
+
+          <!-- Бейдж метро -->
+          <div
+            class="inline-block bg-zinc-900 text-sm px-5 py-2 rounded-full border border-white/20"
+          >
+            м. Лубянка
+          </div>
+
+          <!-- Преимущества -->
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+            <div class="flex items-start gap-4">
+              <i class="fa-solid fa-check text-2xl text-emerald-400 mt-1"></i>
+              <p class="text-lg">Если хочешь попеть<br />и оторваться</p>
+            </div>
+            <div class="flex items-start gap-4">
+              <i class="fa-solid fa-check text-2xl text-emerald-400 mt-1"></i>
+              <p class="text-lg">Отдохнуть<br />после работы</p>
+            </div>
+            <div class="flex items-start gap-4">
+              <i class="fa-solid fa-check text-2xl text-emerald-400 mt-1"></i>
+              <p class="text-lg">Хорошо провести<br />время</p>
+            </div>
+          </div>
+
+          <!-- Кнопка -->
+          <button
+            onclick="
+              document
+                .getElementById('booking')
+                .scrollIntoView({ behavior: 'smooth' })
+            "
+            class="orange-gradient text-xl font-bold px-12 py-5 rounded-2xl hover:scale-105 transition shadow-2xl shadow-orange-600/50"
+          >
+            ЗАБРОНИРОВАТЬ ОНЛАЙН
+          </button>
+        </div>
+
+        <!-- Правая колонка (девушка) -->
+        <div class="relative hidden lg:block">
+          <img
+            src="img/hero-girl.svg"
+            alt="Девушка в караоке"
+            class="w-full max-w-xl mx-auto drop-shadow-2xl"
+          />
+
+          <!-- Круг 24/7 -->
+          <div class="circle"></div>
+
+          <!-- Кнопка Telegram -->
+          <div class="hidden xl:block absolute right-8 bottom-12 z-30">
+            <!-- Вертикальный текст -->
+            <div class="flex flex-col items-center mb-8">
+              <div
+                class="text-orange-400 text-[11px] font-medium tracking-[4px] leading-none rotate-180 writing-vertical"
+              >
+                СВЯЗАТЬСЯ С НАМИ
+              </div>
+            </div>
+
+            <!-- Оранжевый круг с Telegram -->
+            <a
+              href="#"
+              onclick="
+                window.open('https://t.me/your_bot', '_blank');
+                return false;
+              "
+              class="group relative flex items-center justify-center w-[78px] h-[78px] rounded-full bg-gradient-to-br from-[#FFB800] via-[#FF9500] to-[#FF6B00] shadow-[0_10px_30px_rgba(255,107,0,0.5)] hover:scale-110 active:scale-95 transition-all duration-300"
+            >
+              <!-- Иконка Telegram -->
+              <svg
+                width="38"
+                height="38"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M22 2L3 11L10 13L11 19L22 2Z" fill="#1C1C1E" />
+                <path d="M10 13L11 19L13 15L22 2L10 13Z" fill="#2C2C2E" />
+              </svg>
+
+              <!-- Лёгкий блик при наведении -->
+              <div
+                class="absolute inset-0 bg-white/10 rounded-full opacity-0 group-hover:opacity-30 transition"
+              ></div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Вертикальные надписи -->
+      <!-- <div class="hidden xl:flex flex-col items-center gap-2 absolute left-8 bottom-12 text-xs tracking-[3px] rotate-180 writing-vertical">
+      ЛИСТАЙТЕ ВНИЗ
+    </div> -->
+
+      <!-- Нижняя полоса преимуществ -->
+      <div
+        class="absolute bottom-0 left-0 right-0 bg-zinc-900 border-t border-white/10 py-6"
+      >
+        <div
+          class="max-w-screen-2xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8"
+        >
+          <div class="flex items-center gap-4">
+            <i
+              class="hero-icon microfone fa-solid text-3xl text-orange-400"
+            ></i>
+            <div class="text-sm">Профессиональное<br />караоке AST-50</div>
+          </div>
+          <div class="flex items-center gap-4">
+            <i class="wine-bottle fa-solid text-3xl text-orange-400"></i>
+            <div class="text-sm">Без пробкового<br />сбора</div>
+          </div>
+          <div class="flex items-center gap-4">
+            <i
+              class="hand-holding-dollar fa-solid text-3xl text-orange-400"
+            ></i>
+            <div class="text-sm">Без депозита</div>
+          </div>
+          <div class="flex items-center gap-4">
+            <i class="party-horn fa-solid text-3xl text-orange-400"></i>
+            <div class="text-sm">Скидка<br />в День Рождения</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- "HALLS" -->
+    <section id="halls" class="bg-zinc-950 py-20 relative">
+      <div class="max-w-screen-2xl mx-auto px-6">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+          <!-- ЛЕВАЯ КОЛОНКА -->
+          <div class="lg:col-span-5 space-y-10">
+            <div>
+              <h2 class="text-5xl font-black tracking-tight">НАШИ ЗАЛЫ</h2>
+              <p class="text-xl text-zinc-400 mt-3">
+                ОЗНАКОМЬТЕСЬ С АТМОСФЕРОЙ ПРАЗДНИКА
+              </p>
+            </div>
+
+            <!-- Табы -->
+            <div
+              class="flex gap-8 overflow-x-auto pb-4 hide-scrollbar"
+              id="hall-tabs"
+            >
+              <button
+                data-hall="1"
+                onclick="switchHall(1)"
+                class="hall-tab text-white/70 font-medium text-lg whitespace-nowrap"
+              >
+                HALL №1
+              </button>
+              <button
+                data-hall="2"
+                onclick="switchHall(2)"
+                class="hall-tab text-white/70 hover:text-white font-medium text-lg whitespace-nowrap"
+              >
+                HALL №2
+              </button>
+              <button
+                data-hall="3"
+                onclick="switchHall(3)"
+                class="hall-tab text-white/70 hover:text-white font-medium text-lg whitespace-nowrap"
+              >
+                HALL №3
+              </button>
+              <button
+                data-hall="4"
+                onclick="switchHall(4)"
+                class="hall-tab text-white/70 hover:text-white font-medium text-lg whitespace-nowrap"
+              >
+                HALL №4
+              </button>
+            </div>
+
+            <!-- Динамическая информация о зале -->
+            <div class="space-y-6" id="hall-info">
+              <div class="flex items-center gap-5">
+                <div
+                  class="w-12 h-12 bg-zinc-900 rounded-2xl flex items-center justify-center text-3xl"
+                >
+                  🏠
+                </div>
+                <div>
+                  <div class="text-sm text-zinc-400">Зал</div>
+                  <div id="hall-number" class="font-semibold text-xl">№ 1</div>
+                </div>
+              </div>
+
+              <div class="flex items-center gap-5">
+                <div
+                  class="w-12 h-12 bg-zinc-900 rounded-2xl flex items-center justify-center text-3xl"
+                >
+                  📏
+                </div>
+                <div>
+                  <div class="text-sm text-zinc-400">Площадь</div>
+                  <div id="hall-area" class="font-semibold text-xl">40 м²</div>
+                </div>
+              </div>
+
+              <div class="flex items-center gap-5">
+                <div
+                  class="w-12 h-12 bg-zinc-900 rounded-2xl flex items-center justify-center text-3xl"
+                >
+                  👥
+                </div>
+                <div>
+                  <div class="text-sm text-zinc-400">Вместимость</div>
+                  <div id="hall-capacity" class="font-semibold text-xl">
+                    до 20-ти человек
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Пагинация (остаётся статичной или можно расширить позже) -->
+            <div class="flex items-center gap-6">
+              <button
+                onclick="prevHall()"
+                class="w-12 h-12 border border-white/30 rounded-full flex items-center justify-center hover:bg-white/10 transition"
+              >
+                ←
+              </button>
+              <div class="text-xl font-medium">
+                1 <span class="text-white/40">из 17</span>
+              </div>
+              <button
+                onclick="nextHall()"
+                class="w-12 h-12 border border-white/30 rounded-full flex items-center justify-center hover:bg-white/10 transition"
+              >
+                →
+              </button>
+            </div>
+
+            <button
+              onclick="alert('Бронирование зала №' + currentHall)"
+              class="orange-gradient w-full lg:w-auto px-12 py-5 text-xl font-bold rounded-3xl hover:scale-105 transition"
+            >
+              ЗАБРОНИРОВАТЬ
+            </button>
+          </div>
+
+          <!-- ПРАВАЯ КОЛОНКА -->
+          <div class="lg:col-span-7 relative">
+            <div class="relative rounded-3xl overflow-hidden shadow-2xl">
+              <img
+                id="main-hall-image"
+                src="https://picsum.photos/id/1015/1200/800"
+                alt="Hall"
+                class="w-full h-auto aspect-video object-cover transition-opacity duration-500"
+              />
+
+              <div
+                class="absolute bottom-8 left-8 text-4xl font-black tracking-widest text-orange-400 drop-shadow-2xl"
+                id="hall-neon"
+              >
+                YARIZMA
+              </div>
+            </div>
+
+            <!-- Миниатюры (можно сделать динамическими позже) -->
+            <div
+              class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8"
+              id="thumbnails"
+            >
+              <!-- JS ниже будет добавлять/менять при необходимости -->
+              <div
+                onclick="changeMainImage(this)"
+                class="thumbnail cursor-pointer overflow-hidden rounded-2xl border-2 border-transparent hover:border-orange-400 transition"
+              >
+                <img src="./img/halls-1.jpg" class="w-full h-32 object-cover" />
+              </div>
+              <div
+                onclick="changeMainImage(this)"
+                class="thumbnail cursor-pointer overflow-hidden rounded-2xl border-2 border-transparent hover:border-orange-400 transition"
+              >
+                <img src="./img/halls-2.jpg" class="w-full h-32 object-cover" />
+              </div>
+              <div
+                onclick="changeMainImage(this)"
+                class="thumbnail cursor-pointer overflow-hidden rounded-2xl border-2 border-transparent hover:border-orange-400 transition"
+              >
+                <img src="./img/halls-3.jpg" class="w-full h-32 object-cover" />
+              </div>
+              <div
+                onclick="changeMainImage(this)"
+                class="thumbnail cursor-pointer overflow-hidden rounded-2xl border-2 border-transparent hover:border-orange-400 transition"
+              >
+                <img src="./img/halls-4.jpg" class="w-full h-32 object-cover" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- НАШИ ПРЕИМУЩЕСТВА — ОБНОВЛЁННАЯ ВЕРСИЯ -->
+    <section id="advantages" class="bg-zinc-950 py-20 relative overflow-hidden">
+      <div class="max-w-screen-2xl mx-auto px-6 relative">
+        <div class="text-center lg:text-left mb-12">
+          <h2 class="font-black tracking-tight">НАШИ ПРЕИМУЩЕСТВА</h2>
+          <p class="text-xl text-zinc-400 mt-3">ПОЧЕМУ ГОСТИ ВЫБИРАЮТ НАС</p>
+        </div>
+
+        <!-- ОБНОВЛЁННЫЙ HTML (только карточки) — замени свой блок -->
+        <div
+          class="advantage-left grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 relative"
+          id="advantages-grid"
+          >
+          <div class="advantage-card rounded-3xl p-8">
+            <i class="fa-solid fa-shirt text-5xl text-orange-400 mb-6"></i>
+            <h3 class="font-semibold text-lg">Никакого дресс-контроля</h3>
+          </div>
+
+          <div class="advantage-card rounded-3xl p-8">
+            <i
+              class="fa-solid fa-compact-disc text-5xl text-orange-400 mb-6"
+            ></i>
+            <h3 class="font-semibold text-lg">~ 40.000 песен в сет листе</h3>
+            <ul class="mt-4 space-y-2 text-sm text-zinc-400">
+              <li class="flex items-center gap-2">
+                <span class="text-emerald-400">✔</span> Более 50.000 студийных
+                фонограмм
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="text-emerald-400">✔</span> Ежемесячное обновление
+                репертуара
+              </li>
+            </ul>
+          </div>
+
+          <div class="advantage-card rounded-3xl p-8">
+            <i class="fa-solid fa-users text-5xl text-orange-400 mb-6"></i>
+            <h3 class="font-semibold text-lg">Индивидуальные залы</h3>
+            <p class="mt-4 text-sm text-zinc-400">✔ Только Ваша компания</p>
+          </div>
+
+          <div class="advantage-card rounded-3xl p-8">
+            <i
+              class="fa-solid fa-hand-holding-dollar text-5xl text-orange-400 mb-6"
+            ></i>
+            <h3 class="font-semibold text-lg">Без депозита</h3>
+            <ul class="mt-4 space-y-2 text-sm text-zinc-400">
+              <li class="flex items-center gap-2">
+                <span class="text-emerald-400">✔</span> Мы не берем депозит
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="text-emerald-400">✔</span> Оплата происходит за
+                человека в час
+              </li>
+            </ul>
+          </div>
+
+          <div class="advantage-card rounded-3xl p-8">
+            <i class="fa-solid fa-bullseye text-5xl text-orange-400 mb-6"></i>
+            <h3 class="font-semibold text-lg">В самом центре Москвы</h3>
+            <p class="mt-4 text-sm text-zinc-400">✔ м. Лубянка</p>
+          </div>
+
+          <div class="advantage-card rounded-3xl p-8">
+            <i
+              class="fa-solid fa-wine-bottle text-5xl text-orange-400 mb-6"
+            ></i>
+            <h3 class="font-semibold text-lg">Нет пробкового сбора</h3>
+            <p class="mt-4 text-sm text-zinc-400">
+              ✔ Можно приносить с собой еду, напитки и алкоголь без пробкового
+              сбора
+            </p>
+          </div>
+        </div>
+
+        <img
+          id="mic-image"
+          src="img/mic.png"
+          alt="Микрофон"
+          class="hidden lg:block absolute -right-12 top-1/2 -translate-y-1/2 w-80 drop-shadow-2xl pointer-events-none"
+        />
+
+        <!-- Кнопка -->
+        <div class="flex justify-center lg:justify-end mt-12">
+          <button
+            onclick="alert('Открывается бронирование')"
+            class="orange-gradient px-12 py-5 text-xl font-bold rounded-3xl hover:scale-105 transition"
+          >
+            ЗАБРОНИРОВАТЬ ЗАЛ
+          </button>
+        </div>
+      </div>
+    </section>
+
+
+<!-- СЛАЙДЕР -->
+<section id="booking" class="bg-zinc-950 py-20 relative">
+  <div class="max-w-screen-2xl mx-auto px-6">
+    <div class="text-center mb-16">
+      <h2 class="text-5xl lg:text-6xl font-black tracking-tight mb-3">КАК ЗАБРОНИРОВАТЬ ЗАЛ?</h2>
+      <p class="text-lg lg:text-xl text-zinc-400">БРОНИРОВАНИЕ ПО ШАГАМ В ЧАТ-БОТЕ</p>
+    </div>
+
+    <!-- Контейнер слайдера -->
+    <div class="relative group">
+      <!-- Левая стрелка -->
+      <button onclick="scrollSlider(-1)" class="slider-arrow left-0 md:left-4">
+        <i class="fa-solid fa-chevron-left"></i>
+      </button>
+      
+      <!-- Слайдер -->
+      <div id="steps-slider" class="flex gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth pb-12 hide-scrollbar px-12 md:px-16">
+        
+        <!-- Шаги 1–5 -->
+        <div class="slide-wrapper min-w-[300px] md:min-w-[360px] snap-center" data-step="1">
+          <div class="relative">
+            <img src="img/steps/1.png" alt="Шаг 1" class="phone-frame w-full" draggable="false">
+            <div class="step-number-wrapper">
+              <div class="step-number">1</div>
+            </div>
+          </div>
+          <div class="text-center mt-8">
+            <i class="fa-solid fa-arrow-right-to-bracket text-4xl text-orange-400 mb-3"></i>
+            <p class="text-sm md:text-base font-semibold">Перейти в чат-бот<br><span class="text-orange-400 font-bold">fh_harizma_bot</span></p>
+          </div>
+        </div>
+
+        <div class="slide-wrapper min-w-[300px] md:min-w-[360px] snap-center" data-step="2">
+          <div class="relative">
+            <img src="img/steps/2.png" alt="Шаг 2" class="phone-frame w-full" draggable="false">
+            <div class="step-number-wrapper">
+              <div class="step-number">2</div>
+            </div>
+          </div>
+          <div class="text-center mt-8">
+            <i class="fa-solid fa-users text-4xl text-orange-400 mb-3"></i>
+            <p class="text-sm md:text-base font-semibold">Выбрать количество<br>человек</p>
+          </div>
+        </div>
+
+        <div class="slide-wrapper min-w-[300px] md:min-w-[360px] snap-center" data-step="3">
+          <div class="relative">
+            <img src="img/steps/3.png" alt="Шаг 3" class="phone-frame w-full" draggable="false">
+            <div class="step-number-wrapper">
+              <div class="step-number">3</div>
+            </div>
+          </div>
+          <div class="text-center mt-8">
+            <i class="fa-solid fa-hourglass-end text-4xl text-orange-400 mb-3"></i>
+            <p class="text-sm md:text-base font-semibold">Выбрать количество<br>часов посещения</p>
+          </div>
+        </div>
+
+        <div class="slide-wrapper min-w-[300px] md:min-w-[360px] snap-center" data-step="4">
+          <div class="relative">
+            <img src="img/steps/4.png" alt="Шаг 4" class="phone-frame w-full" draggable="false">
+            <div class="step-number-wrapper">
+              <div class="step-number">4</div>
+            </div>
+          </div>
+          <div class="text-center mt-8">
+            <i class="fa-solid fa-calendar text-4xl text-orange-400 mb-3"></i>
+            <p class="text-sm md:text-base font-semibold">Выбрать<br>дату</p>
+          </div>
+        </div>
+
+        <div class="slide-wrapper min-w-[300px] md:min-w-[360px] snap-center" data-step="5">
+          <div class="relative">
+            <img src="img/steps/5.png" alt="Шаг 5" class="phone-frame w-full" draggable="false">
+            <div class="step-number-wrapper">
+              <div class="step-number">5</div>
+            </div>
+          </div>
+          <div class="text-center mt-8">
+            <i class="fa-solid fa-clock text-4xl text-orange-400 mb-3"></i>
+            <p class="text-sm md:text-base font-semibold">Выбрать время<br>старта брони</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Правая стрелка -->
+      <button onclick="scrollSlider(1)" class="slider-arrow right-0 md:right-4">
+        <i class="fa-solid fa-chevron-right"></i>
+      </button>
+    </div>
+
+    <!-- Пагинация -->
+    <div class="flex justify-center items-center gap-6 mt-12">
+      <button onclick="scrollSlider(-1)" class="p-2 rounded-full hover:bg-white/10 transition">
+        <i class="fa-solid fa-chevron-left text-white/60 hover:text-orange-400"></i>
+      </button>
+      <div id="pagination" class="font-semibold text-base min-w-[80px] text-center">
+        3 <span class="text-white/50">из 5</span>
+      </div>
+      <button onclick="scrollSlider(1)" class="p-2 rounded-full hover:bg-white/10 transition">
+        <i class="fa-solid fa-chevron-right text-white/60 hover:text-orange-400"></i>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ БЛОК -->
+<section id="faq" class="bg-zinc-950 py-20 relative overflow-hidden">
+  <div class="max-w-screen-2xl mx-auto px-6">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+      
+      <!-- ЛЕВАЯ КОЛОНКА — АККОРДИОН -->
+      <div class="space-y-6">
+        <div>
+          <h2 class="text-5xl lg:text-5xl font-black tracking-tight mb-3">ВОПРОСЫ И ОТВЕТЫ</h2>
+          <p class="text-lg text-zinc-400">МЫ ПОДГОТОВИЛИ ОТВЕТЫ НА ЧАСТО ЗАДАВАЕМЫЕ ВОПРОСЫ</p>
+        </div>
+
+        <!-- Аккордион -->
+        <div class="space-y-3" id="faq-accordion">
+          <!-- Вопрос 1 -->
+          <div class="faq-item">
+            <button onclick="toggleFaq(0)" class="faq-button w-full flex items-center justify-between active">
+              <span class="text-white font-semibold text-left">Какое у вас караоке?</span>
+              <i class="fa-solid fa-chevron-down text-orange-400 transition-transform"></i>
+            </button>
+            <div class="faq-content active">
+              <p class="text-zinc-300 text-sm leading-relaxed pt-4">Более 50.000 студийных фонограмм. Из них 80% — оригинальные минусовки в качестве PRO (mp3 - WAV). Ежемесячное обновления репертуара. Более 10.000 специальных фонограмм в сопровождении оригинальных видеоклипов.</p>
+            </div>
+          </div>
+
+          <!-- Вопрос 2 -->
+          <div class="faq-item">
+            <button onclick="toggleFaq(1)" class="faq-button w-full flex items-center justify-between">
+              <span class="text-white font-semibold text-left">Есть ли у вас английские песни?</span>
+              <i class="fa-solid fa-chevron-down text-orange-400 transition-transform"></i>
+            </button>
+            <div class="faq-content">
+              <p class="text-zinc-300 text-sm leading-relaxed pt-4">Да, в нашей коллекции достаточно английских песен. Постоянно добавляются новые композиции известных зарубежных исполнителей.</p>
+            </div>
+          </div>
+
+          <!-- Вопрос 3 -->
+          <div class="faq-item">
+            <button onclick="toggleFaq(2)" class="faq-button w-full flex items-center justify-between">
+              <span class="text-white font-semibold text-left">Можно ли подключить телефон?</span>
+              <i class="fa-solid fa-chevron-down text-orange-400 transition-transform"></i>
+            </button>
+            <div class="faq-content">
+              <p class="text-zinc-300 text-sm leading-relaxed pt-4">Да, в каждом зале возможно подключение вашего смартфона через Bluetooth или HDMI кабель для вывода музыки и видео.</p>
+            </div>
+          </div>
+
+          <!-- Вопрос 4 -->
+          <div class="faq-item">
+            <button onclick="toggleFaq(3)" class="faq-button w-full flex items-center justify-between">
+              <span class="text-white font-semibold text-left">Сколько микрофонов в каждом зале?</span>
+              <i class="fa-solid fa-chevron-down text-orange-400 transition-transform"></i>
+            </button>
+            <div class="faq-content">
+              <p class="text-zinc-300 text-sm leading-relaxed pt-4">В каждом зале установлено 2-4 профессиональных микрофона в зависимости от размера помещения. Все микрофоны высокого качества с отличной звукопередачей.</p>
+            </div>
+          </div>
+
+          <!-- Вопрос 5 -->
+          <div class="faq-item">
+            <button onclick="toggleFaq(4)" class="faq-button w-full flex items-center justify-between">
+              <span class="text-white font-semibold text-left">Есть ли оплата картой?</span>
+              <i class="fa-solid fa-chevron-down text-orange-400 transition-transform"></i>
+            </button>
+            <div class="faq-content">
+              <p class="text-zinc-300 text-sm leading-relaxed pt-4">Да, мы принимаем все основные платежные карты Visa, MasterCard и МИР. Оплата также возможна через Яндекс.Касса и другие системы.</p>
+            </div>
+          </div>
+
+          <!-- Вопрос 6 -->
+          <div class="faq-item">
+            <button onclick="toggleFaq(5)" class="faq-button w-full flex items-center justify-between">
+              <span class="text-white font-semibold text-left">Можно принести с собой алкоголь и еду?</span>
+              <i class="fa-solid fa-chevron-down text-orange-400 transition-transform"></i>
+            </button>
+            <div class="faq-content">
+              <p class="text-zinc-300 text-sm leading-relaxed pt-4">Да, конечно! Можно приносить с собой свой алкоголь, напитки и еду без каких-либо ограничений и пробковых сборов. Весь хлам мы уберём после вас.</p>
+            </div>
+          </div>
+
+          <!-- Вопрос 7 -->
+          <div class="faq-item">
+            <button onclick="toggleFaq(6)" class="faq-button w-full flex items-center justify-between">
+              <span class="text-white font-semibold text-left">Как рассчитывается стоимость?</span>
+              <i class="fa-solid fa-chevron-down text-orange-400 transition-transform"></i>
+            </button>
+            <div class="faq-content">
+              <p class="text-zinc-300 text-sm leading-relaxed pt-4">Стоимость рассчитывается исходя из количества часов и количества человек в вашей компании. Цена за человека в час указана на нашем сайте. Чем больше человек, тем выгоднее стоимость.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ПРАВАЯ КОЛОНКА — ТАПОЧКИ И КНОПКА -->
+      <div class="flex flex-col items-center lg:items-end space-y-8">
+        <div class="text-center lg:text-right space-y-4 max-w-lg">
+          <p class="text-lg lg:text-xl font-semibold leading-relaxed">
+            В нашем заведении <span class="text-orange-400 font-bold">Бельгийский коврик</span>. На входе выдают <span class="text-orange-400 font-bold">индивидуально запакованные тапочки</span>, в которые необходимо переобуться.
+          </p>
+        </div>
+
+        <!-- Изображение тапочек -->
+        <div class="w-full max-w-sm">
+          <img src="/img/slippers.png" alt="Тапочки" class="w-full drop-shadow-2xl rounded-2xl">
+        </div>
+
+        <!-- Кнопка -->
+        <button
+          onclick="window.open('https://t.me/your_bot', '_blank')"
+          class="orange-gradient px-12 py-5 text-xl font-bold rounded-full hover:scale-105 transition shadow-2xl shadow-orange-600/50 w-full sm:w-auto"
+        >
+          ЗАБРОНИРОВАТЬ ЗАЛ
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!-- ФУТЕР -->
+    <footer class="bg-black border-t border-white/10">
+      <div class="max-w-screen-2xl mx-auto px-6 py-20">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+          
+          <!-- Колонка 1: Логотип -->
+          <div class="flex flex-col items-start space-y-6">
+            <a href="#" class="text-3xl font-black tracking-[-2px]">
+              <span class="text-orange-500">Y</span><span class="text-amber-400">ARIZMA</span>
+            </a>
+            <p class="text-sm text-zinc-400">Лучший каокаоке клуб в центре Москвы</p>
+          </div>
+
+          <!-- Колонка 2: Контакты -->
+          <div class="space-y-4">
+            <h3 class="font-semibold text-lg mb-4">КОНТАКТЫ</h3>
+            <a href="tel:+79079709090" class="flex items-center gap-3 text-zinc-300 hover:text-orange-400 transition group">
+              <i class="fa-solid fa-phone text-xl text-orange-400 group-hover:scale-110 transition"></i>
+              <span>+7 (999) 970-90-90</span>
+            </a>
+            <a href="mailto:info@yarizma.ru" class="flex items-center gap-3 text-zinc-300 hover:text-orange-400 transition group">
+              <i class="fa-solid fa-envelope text-xl text-orange-400 group-hover:scale-110 transition"></i>
+              <span>info@yarizma.ru</span>
+            </a>
+          </div>
+
+          <!-- Колонка 3: Часы работы -->
+          <div class="space-y-4">
+            <h3 class="font-semibold text-lg mb-4">ЧАСЫ РАБОТЫ</h3>
+            <div class="space-y-2 text-sm text-zinc-300">
+              <div class="flex justify-between">
+                <span>Пн – Чт:</span>
+                <span class="font-medium">10:00 – 00:00</span>
+              </div>
+              <div class="flex justify-between">
+                <span>Пт – Сб:</span>
+                <span class="font-medium">10:00 – 02:00</span>
+              </div>
+              <div class="flex justify-between">
+                <span>Вс:</span>
+                <span class="font-medium">10:00 – 23:00</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Колонка 4: Адрес и кнопка -->
+          <div class="space-y-6">
+            <div>
+              <h3 class="font-semibold text-lg mb-3">АДРЕС</h3>
+              <a href="https://maps.google.com/?q=м.+Лубянка,+ул.+Сретенский+переулок,+4" target="_blank" class="flex items-start gap-3 group">
+                <i class="fa-solid fa-map-marker-alt text-xl text-orange-400 mt-1 flex-shrink-0"></i>
+                <span class="text-sm text-zinc-300 group-hover:text-orange-400 transition">м. Лубянка, ул. Сретенский переулок, 4</span>
+              </a>
+            </div>
+            <a href="https://maps.google.com/?q=м.+Лубянка,+ул.+Сретенский+переулок,+4" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 border border-orange-400 text-orange-400 rounded-full hover:bg-orange-400 hover:text-black transition group">
+              <i class="fa-solid fa-directions group-hover:scale-110 transition"></i>
+              <span class="text-sm font-semibold">ПОСТРОИТЬ МАРШРУТ</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Разделитель -->
+        <div class="border-t border-white/10 pt-12">
+          <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+            <!-- Соцсети -->
+            <div class="flex items-center gap-4">
+              <span class="text-sm text-zinc-400">Следите за нами:</span>
+              <div class="flex gap-3">
+                <a href="https://t.me/yarizma" target="_blank" class="w-10 h-10 rounded-full bg-white/10 hover:bg-orange-400 flex items-center justify-center transition text-white hover:text-black">
+                  <i class="fa-brands fa-telegram text-lg"></i>
+                </a>
+                <a href="https://instagram.com/yarizma" target="_blank" class="w-10 h-10 rounded-full bg-white/10 hover:bg-orange-400 flex items-center justify-center transition text-white hover:text-black">
+                  <i class="fa-brands fa-instagram text-lg"></i>
+                </a>
+                <a href="https://vk.com/yarizma" target="_blank" class="w-10 h-10 rounded-full bg-white/10 hover:bg-orange-400 flex items-center justify-center transition text-white hover:text-black">
+                  <i class="fa-brands fa-vk text-lg"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- Копирайт -->
+            <p class="text-sm text-zinc-400 text-center md:text-right">
+              © 2026 YARIZMA. Все права защищены.
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- КНОПКА СКРОЛЛА ВВЕРХ -->
+    <button id="scrollToTop" class="scroll-to-top" onclick="scrollToTop()">
+      <i class="fa-solid fa-arrow-up"></i>
+    </button>
+    <script src="js/script.js"></script>
+</html>
