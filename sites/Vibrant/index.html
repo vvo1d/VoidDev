@@ -4,18 +4,20 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Vibrant – Open your first crypto wallet</title>
-
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-
-  <!-- Styles: base → tablet → mobile -->
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/tablet.css" />
   <link rel="stylesheet" href="css/mobile.css" />
 </head>
 <body>
+
+<!-- CURSOR GLOW -->
+<div id="cursor-glow"></div>
+
+<!-- ORB CANVAS (behind everything) -->
+<canvas id="orb-canvas"></canvas>
 
 <!-- NAV -->
 <nav id="nav">
@@ -67,15 +69,15 @@
       <div class="card-content">
         <div class="stat-block">
           <div class="stat-label">Total Balance</div>
-          <div class="stat-value big">$13,289.00</div>
+          <div class="stat-value big" data-count="13289" data-prefix="$" data-suffix="">$13,289.00</div>
         </div>
         <div class="stat-block">
           <div class="stat-label">Total Income</div>
-          <div class="stat-value">$2,350.00</div>
+          <div class="stat-value" data-count="2350" data-prefix="$" data-suffix="">$2,350.00</div>
         </div>
         <div class="stat-block">
           <div class="stat-label">Total Outcome</div>
-          <div class="stat-value">$5,620.00</div>
+          <div class="stat-value" data-count="5620" data-prefix="$" data-suffix="">$5,620.00</div>
         </div>
         <div class="mini-chart">
           <svg viewBox="0 0 600 80" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
@@ -115,7 +117,6 @@
     <h2 class="section-title">Everything you need to manage money</h2>
     <p class="section-sub">From tracking expenses to splitting bills — Vibrant has you covered with a beautiful, intuitive interface.</p>
 
-    <!-- Feature 1 -->
     <div class="feature-row reveal">
       <div class="feature-text">
         <span class="tag">Monthly Overview</span>
@@ -133,7 +134,6 @@
       </div>
     </div>
 
-    <!-- Feature 2 -->
     <div class="feature-row reverse reveal">
       <div class="feature-text">
         <span class="tag">Expense Control</span>
@@ -164,7 +164,6 @@
       </div>
     </div>
 
-    <!-- Feature 3 -->
     <div class="feature-row reveal">
       <div class="feature-text">
         <span class="tag">Bill Splitting</span>
@@ -245,7 +244,7 @@
       </div>
       <div class="testi-card reveal">
         <div class="testi-stars">★★★★★</div>
-        <p class="testi-text">Morbi at metus accumsan, posuere mi quis, tempus tortor. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+        <p class="testi-text">Morbi at metus accumsan, posuere mi quis, tempus tortor. Pellentesque habitant morbi tristique senectus et netus et malesuada fames.</p>
         <div class="testi-author">
           <div class="testi-avatar" style="background:#38bdf8;">B</div>
           <div><div class="testi-name">Bryan Smith</div><div class="testi-role">CEO, Framer</div></div>
@@ -277,7 +276,7 @@
       </div>
       <div class="testi-card reveal">
         <div class="testi-stars">★★★★★</div>
-        <p class="testi-text">Curabitur gravida placerat purus nec bibendum. Proin porttitor varius risus blandit dictum. Vestibulum at erat ut velit egestas venenatis sit amet nec metus.</p>
+        <p class="testi-text">Curabitur gravida placerat purus nec bibendum. Proin porttitor varius risus blandit dictum. Vestibulum at erat ut velit egestas sit amet nec metus.</p>
         <div class="testi-author">
           <div class="testi-avatar" style="background:#a78bfa;">B</div>
           <div><div class="testi-name">Bryan Smith</div><div class="testi-role">CEO, Framer</div></div>
@@ -293,12 +292,25 @@
     <div class="section-label"><span class="tag">Pricing</span></div>
     <h2 class="section-title reveal">Ready to get started?</h2>
     <p class="section-sub reveal">Choose a plan that fits your needs.</p>
+
+    <!-- Billing toggle -->
+    <div class="pricing-toggle-wrap reveal">
+      <span class="toggle-label">Monthly</span>
+      <label class="toggle-switch">
+        <input type="checkbox" id="pricing-toggle" />
+        <span class="toggle-track"><span class="toggle-thumb"></span></span>
+      </label>
+      <span class="toggle-label">Annual <span class="pill-badge">−20%</span></span>
+    </div>
+
     <div class="pricing-grid">
       <div class="price-card reveal">
         <div class="price-name">Personal</div>
         <div class="price-desc">Best for brands that need designs on an ongoing basis.</div>
         <div class="price-amount">
-          <span class="cur">$</span><span class="num">2.99</span><span class="per">/mo</span>
+          <span class="cur">$</span>
+          <span class="num" data-monthly="2.99" data-annual="2.39">2.99</span>
+          <span class="per pricing-period">/mo</span>
         </div>
         <a href="#" class="btn btn-outline">Try For Free</a>
         <ul class="price-feat">
@@ -311,7 +323,9 @@
         <div class="price-name">Business</div>
         <div class="price-desc">Best for brands that need designs on an ongoing basis.</div>
         <div class="price-amount">
-          <span class="cur">$</span><span class="num">8.99</span><span class="per">/mo</span>
+          <span class="cur">$</span>
+          <span class="num" data-monthly="8.99" data-annual="7.19">8.99</span>
+          <span class="per pricing-period">/mo</span>
         </div>
         <a href="#" class="btn">Try For Free</a>
         <ul class="price-feat">
@@ -341,8 +355,7 @@
     </div>
     <div class="footer-bottom">
       <span>Vibrant is a Framer template made for SaaS companies.</span>
-      <span>Made with ♥ Development: <a href="mailto:victor@vo1d.ru">victor@vo1d.ru</a></span>
-      
+      <span>Made with ♥ · Font from Font Share</span>
     </div>
   </div>
 </footer>
