@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yellow Kitchen - Food Delivery</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/tablet.css">
+    <link rel="stylesheet" href="./css/mobile.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-logo">
+                <span class="logo-text">yellow</span><span class="logo-accent">kitchen</span>
+            </div>
+            <div class="navbar-menu">
+                <a href="#" class="nav-link">Log in</a>
+                <a href="#" class="nav-link cart-link">
+                    <span class="cart-icon">🛒</span>
+                    <span class="cart-count">0</span>
+                </a>
+                <button class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <!-- Left content -->
+            <div class="hero-content">
+                <h1 class="hero-title">Your Food court at home</h1>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary">
+                        <span class="btn-label">Delivery</span>
+                        <span class="btn-sublabel">Order in</span>
+                    </button>
+                    <button class="btn btn-secondary">
+                        <span class="btn-label">Takeout</span>
+                        <span class="btn-sublabel">Grab and go</span>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Right image -->
+            <div class="hero-image">
+                <div>
+                    <img src="./assets/img/salad.png" alt="Fresh salad" class="salad-img">
+                </div>
+                <div class="hero-leaf"></div>
+            </div>
+        </div>
+
+        <!-- Features section -->
+        <div class="hero-features">
+            <div class="feature-item">
+                <span class="feature-icon icon-delivery"></span>
+                <div class="feature-text">
+                    <p class="feature-main">delivery in all paris</p>
+                    <p class="feature-sub">in less than 30 minutes</p>
+                </div>
+            </div>
+            <div class="feature-item">
+                <span class="feature-icon icon-free-delivery"></span>
+                <div class="feature-text">
+                    <p class="feature-main">Free delivery</p>
+                    <p class="feature-sub">from 29 euros</p>
+                </div>
+            </div>
+            <div class="feature-item">
+                <span class="feature-icon icon-fresh"></span>
+                <div class="feature-text">
+                    <p class="feature-main">Only fresh</p>
+                    <p class="feature-sub">and French products</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Restaurants Section -->
+    <section class="restaurants">
+        <div class="restaurants-header">
+            <h2 class="restaurants-title">Restaurants</h2>
+            <a href="#" class="show-all-link">show all</a>
+        </div>
+
+        <div class="restaurants-slider-wrapper">
+            <button class="slider-btn slider-btn-prev" id="prevBtn">
+                <span>‹</span>
+            </button>
+
+            <div class="restaurants-slider" id="restaurantsSlider">
+                <div class="restaurant-card">
+                    <div class="restaurant-image">
+                        <img src="./assets/img/1.jpg" alt="Burger D'lice">
+                    </div>
+                </div>
+
+                <div class="restaurant-card">
+                    <div class="restaurant-image">
+                        <img src="./assets/img/2.jpg" alt="Il Pastifigio">
+                    </div>
+                </div>
+
+                <div class="restaurant-card">
+                    <div class="restaurant-image">
+                        <img src="./assets/img/3.jpg" alt="Believe">
+                    </div>
+                </div>
+
+                <div class="restaurant-card">
+                    <div class="restaurant-image">
+                        <img src="./assets/img/4.jpg" alt="BO">
+                    </div>
+                </div>
+            </div>
+
+            <button class="slider-btn slider-btn-next" id="nextBtn">
+                <span>›</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- Nearest Restaurants Section -->
+    <section class="nearest-restaurants">
+        <div class="nearest-restaurants-container">
+            <div class="nearest-restaurants-content">
+                <h2 class="nearest-restaurants-title">Your nearest restaurants</h2>
+                <p class="nearest-restaurants-text">Each kitchen works with its own delivery area to deliver food to you as soon as possible</p>
+            </div>
+
+            <form class="delivery-form">
+                <div class="form-group">
+                    <input 
+                        type="text" 
+                        class="delivery-input" 
+                        placeholder="Enter delivery address" 
+                        required
+                    >
+                    <button type="submit" class="send-btn">send</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Specialities Section -->
+    <section class="specialities">
+        <div class="specialities-header">
+            <h2 class="specialities-title">Specialities</h2>
+            <a href="#" class="show-all-link">show all</a>
+        </div>
+
+        <div class="specialities-slider-wrapper">
+            <button class="slider-btn slider-btn-prev" id="specialitiesPrevBtn">
+                <span>‹</span>
+            </button>
+
+            <div class="specialities-slider" id="specialitiesSlider">
+                <div class="speciality-card">
+                    <div class="speciality-icon">
+                        <img src="./assets/ic/Food/bagel.svg" alt="Bagel">
+                    </div>
+                    <p class="speciality-name">Bagel</p>
+                </div>
+
+                <div class="speciality-card">
+                    <div class="speciality-icon">
+                        <img src="./assets/ic/Food/burger.svg" alt="Burger">
+                    </div>
+                    <p class="speciality-name">Burger</p>
+                </div>
+
+                <div class="speciality-card">
+                    <div class="speciality-icon">
+                        <img src="./assets/ic/Food/chicken.svg" alt="Chicken">
+                    </div>
+                    <p class="speciality-name">Chicken</p>
+                </div>
+
+                <div class="speciality-card">
+                    <div class="speciality-icon">
+                        <img src="./assets/ic/Food/fish.svg" alt="Fish">
+                    </div>
+                    <p class="speciality-name">Fish</p>
+                </div>
+
+                <div class="speciality-card">
+                    <div class="speciality-icon">
+                        <img src="./assets/ic/Food/fishnchips.svg" alt="Fish'Chips">
+                    </div>
+                    <p class="speciality-name">Fish'Chips</p>
+                </div>
+
+                <div class="speciality-card">
+                    <div class="speciality-icon">
+                        <img src="./assets/ic/Food/vegan.svg" alt="Salads">
+                    </div>
+                    <p class="speciality-name">Salads</p>
+                </div>
+
+                <div class="speciality-card">
+                    <div class="speciality-icon">
+                        <img src="./assets/ic/Food/pizza.svg" alt="Pizza">
+                    </div>
+                    <p class="speciality-name">Pizza</p>
+                </div>
+
+                <div class="speciality-card">
+                    <div class="speciality-icon">
+                        <img src="./assets/ic/Food/raviolli.svg" alt="Pasta">
+                    </div>
+                    <p class="speciality-name">Pasta</p>
+                </div>
+            </div>
+
+            <button class="slider-btn slider-btn-next" id="specialitiesNextBtn">
+                <span>›</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="stats-container">
+            <div class="stat-card">
+                <div class="stat-number">1</div>
+                <div class="stat-label">kitchen</div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-number">11</div>
+                <div class="stat-label">specialities</div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-number">11</div>
+                <div class="stat-label">restaurants</div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-number">1</div>
+                <div class="stat-label">transport costs</div>
+            </div>
+        </div>
+    </section>
+
+        <!-- Map Section -->
+    <section class="map-section">
+        <div id="deliveryMap"></div>
+    </section>
+
+    <!-- Instagram Section -->
+    <section class="instagram">
+        <div class="instagram-container">
+            <h2 class="instagram-title">
+                <span class="instagram-hashtag">#YellowKitchens</span>
+                <span class="instagram-label"> in instagram</span>
+            </h2>
+            <div class="instagram-grid">
+                <div class="instagram-item">
+                    <img src="./assets/img/insta1.jpg" alt="Yellow Kitchen instagram 1">
+                </div>
+                <div class="instagram-item">
+                    <img src="./assets/img/insta2.jpg" alt="Yellow Kitchen instagram 2">
+                </div>
+                <div class="instagram-item">
+                    <img src="./assets/img/insta3.jpg" alt="Yellow Kitchen instagram 3">
+                </div>
+                <div class="instagram-item">
+                    <img src="./assets/img/insta4.jpg" alt="Yellow Kitchen instagram 4">
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="footer-container">
+
+                <!-- Brand column -->
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <span class="logo-text">yellow</span><span class="logo-accent">kitchen</span>
+                    </div>
+                    <hr class="footer-divider">
+                    <div class="footer-apps">
+                        <a href="#" class="app-badge app-badge--apple" aria-label="Download on the App Store">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 40" width="120" height="40">
+                                <rect width="120" height="40" rx="5" fill="#000"/>
+                                <text x="38" y="13" fill="#fff" font-size="7" font-family="sans-serif">Download on the</text>
+                                <text x="34" y="27" fill="#fff" font-size="13" font-family="sans-serif" font-weight="bold">App Store</text>
+                                <text x="12" y="26" fill="#fff" font-size="22" font-family="sans-serif"></text>
+                            </svg>
+                        </a>
+                        <a href="#" class="app-badge app-badge--google" aria-label="Get it on Google Play">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 135 40" width="135" height="40">
+                                <rect width="135" height="40" rx="5" fill="#000"/>
+                                <text x="38" y="13" fill="#fff" font-size="7" font-family="sans-serif">ANDROID APP ON</text>
+                                <text x="34" y="27" fill="#fff" font-size="13" font-family="sans-serif" font-weight="bold">Google play</text>
+                                <text x="10" y="27" fill="#34a853" font-size="22" font-family="sans-serif">▶</text>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- About us -->
+                <div class="footer-col">
+                    <h3 class="footer-col-title">About us</h3>
+                    <ul class="footer-links">
+                        <li><a href="#" class="footer-link">Concept</a></li>
+                        <li><a href="#" class="footer-link">Franchise</a></li>
+                        <li><a href="#" class="footer-link">Business</a></li>
+                        <li><a href="#" class="footer-link">Restaurant signup</a></li>
+                        <li><a href="#" class="footer-link">For Investors</a></li>
+                    </ul>
+                </div>
+
+                <!-- Get help -->
+                <div class="footer-col">
+                    <h3 class="footer-col-title">Get help</h3>
+                    <ul class="footer-links">
+                        <li><a href="#" class="footer-link">Read FAQs</a></li>
+                        <li><a href="#" class="footer-link">Restaurants</a></li>
+                        <li><a href="#" class="footer-link">Specialities</a></li>
+                        <li><a href="#" class="footer-link">Sign up to deliver</a></li>
+                        <li>
+                            <button class="footer-lang-btn footer-link">
+                                English <span class="footer-lang-arrow">&#8964;</span>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Contact us -->
+                <div class="footer-col">
+                    <h3 class="footer-col-title">Contact us</h3>
+                    <address class="footer-address">
+                        <p>Yellow kitchen Paris 11</p>
+                        <p>69 avenue de la Republique 75011 Paris</p>
+                        <p class="footer-phone">0800 111 126</p>
+                        <a href="mailto:contact@yellowkitchens.com" class="footer-email">contact@yellowkitchens.com</a>
+                    </address>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Footer bottom bar -->
+        <div class="footer-bottom">
+            <div class="footer-bottom-container">
+
+                <!-- Social icons -->
+                <div class="footer-social">
+                    <a href="#" class="social-link" aria-label="Instagram">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                            <circle cx="12" cy="12" r="4"/>
+                            <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="social-link" aria-label="Twitter">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M23 3a10.9 10.9 0 01-3.14 1.53A4.48 4.48 0 0012 7v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="social-link" aria-label="Facebook">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Legal links + copyright -->
+                <div class="footer-legal">
+                    <a href="#" class="footer-legal-link">Privacy Policy</a>
+                    <a href="#" class="footer-legal-link footer-legal-link--bold">Terms</a>
+                    <span class="footer-copyright">© 2020 Yellow kitchen</span>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+    <script src="./js/script.js"></script>
+</body>
+</html>

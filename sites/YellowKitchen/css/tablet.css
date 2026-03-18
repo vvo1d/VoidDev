@@ -1,0 +1,257 @@
+/* Tablet Styles (768px and below) */
+@media (max-width: 768px) {
+    /* Navigation */
+    .navbar-menu {
+        gap: 1rem;
+    }
+
+    .nav-link {
+        font-size: 0.9rem;
+    }
+
+    /* Hero Section */
+    .hero-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 0 1rem;
+    }
+
+    .hero {
+        padding: 2.5rem 0 2rem;
+    }
+
+    .hero-title {
+        font-size: 2.2rem;
+    }
+
+    .hero-circle {
+        width: 280px;
+        height: 280px;
+    }
+
+    .hero-buttons {
+        gap: 1rem;
+    }
+
+    .btn {
+        min-width: 130px;
+        padding: 0.85rem 1.2rem;
+    }
+
+    .hero-features {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 2rem 1rem 0;
+    }
+
+    .feature-item {
+        gap: 0.8rem;
+    }
+
+    .feature-icon {
+        font-size: 2rem;
+        width: 48px;
+        height: 48px;
+    }
+
+    /* Restaurants Section */
+    .restaurants-header {
+        padding: 0 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .restaurants-title {
+        font-size: 1.8rem;
+    }
+
+    .restaurants-slider-wrapper {
+        padding: 0 1rem;
+        gap: 0.75rem;
+    }
+
+    .restaurants-slider {
+        gap: 1.5rem;
+        padding: 0 0.5rem;
+    }
+
+    .restaurant-card {
+        flex: 0 0 calc(50% - 0.75rem);
+        height: 296px;
+    }
+
+    .restaurant-image {
+        width: 100%;
+        height: 100%;
+    }
+
+    .slider-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+
+    .restaurants {
+        padding: 2.5rem 0;
+    }
+
+    /* Nearest Restaurants Section */
+    .nearest-restaurants-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 0 1rem;
+    }
+
+    .nearest-restaurants-title {
+        font-size: 1.8rem;
+    }
+
+    .nearest-restaurants-text {
+        font-size: 0.95rem;
+    }
+
+    .form-group {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .delivery-input {
+        border-right: 1px solid #e0e0e0;
+        border-bottom: 1px solid #e0e0e0;
+    }
+
+    .send-btn {
+        width: 100%;
+    }
+
+    /* Specialities Section */
+    .specialities-header {
+        padding: 0 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .specialities-title {
+        font-size: 1.8rem;
+    }
+
+    .specialities-slider-wrapper {
+        padding: 0 1rem;
+        gap: 0.75rem;
+    }
+
+    .specialities-slider {
+        gap: 1.5rem;
+        padding: 0 0.5rem;
+    }
+
+    .speciality-card {
+        flex: 0 0 calc(33.333% - 1rem);
+        min-width: 120px;
+        padding: 1rem;
+        gap: 0.75rem;
+    }
+
+    .speciality-icon {
+        width: 60px;
+        height: 60px;
+    }
+
+    .speciality-name {
+        font-size: 0.9rem;
+    }
+
+    .specialities {
+        padding: 2.5rem 0;
+    }
+
+    /* Stats Section */
+    .stats {
+        padding: 3rem 0;
+    }
+
+    .stats-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+        padding: 0 1rem;
+        min-height: 300px;
+        background-size: cover;
+    }
+
+    .stat-number {
+        width: 110px;
+        height: 110px;
+        font-size: 2rem;
+    }
+
+    .stat-label {
+        font-size: 0.9rem;
+    }
+
+
+
+    /* Map Section */
+    #deliveryMap {
+        height: 360px;
+        border-radius: 0;
+        margin: 0 1rem;
+    }
+
+    .map-section {
+        padding: 2.5rem 0;
+    }
+
+    /* Instagram Section */
+    .instagram {
+        padding: 2.5rem 0;
+    }
+
+    .instagram-title {
+        font-size: 1.8rem;
+    }
+
+    .instagram-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+
+
+    /* Footer */
+    .footer-top {
+        padding: 3rem 0 2.5rem;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 2.5rem 2rem;
+        padding: 0 1rem;
+    }
+
+    .footer-brand {
+        grid-column: 1 / -1;
+        flex-direction: row;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+    }
+
+    .footer-divider {
+        display: none;
+    }
+
+    .footer-bottom-container {
+        padding: 0 1rem;
+        flex-direction: column;
+        gap: 1.25rem;
+        align-items: flex-start;
+    }
+
+    .footer-legal {
+        gap: 1.25rem;
+        flex-wrap: wrap;
+    }
+
+}
+
+
+
+
