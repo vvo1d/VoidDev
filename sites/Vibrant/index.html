@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vibrant – Open your first crypto wallet</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Styles: base → tablet → mobile -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/tablet.css" />
+  <link rel="stylesheet" href="css/mobile.css" />
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="wrap nav-inner">
+    <a href="#" class="logo">vibrant<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">FAQ</a></li>
+      <li><a href="#">Blog</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="#" class="btn btn-outline">Sign In</a>
+      <a href="#pricing" class="btn">Buy Template</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#">Home</a>
+  <a href="#">FAQ</a>
+  <a href="#">Blog</a>
+  <a href="#pricing" class="btn" style="text-align:center;margin-top:8px;">Buy Template</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content reveal">
+    <div class="hero-tag"><span class="tag">🚀 Crypto made simple</span></div>
+    <h1>Open your first crypto wallet, right now!</h1>
+    <p>Vibrant is the best software platform to easily capture user feedback for your brand and products.</p>
+    <div class="hero-cta">
+      <a href="#pricing" class="btn">Buy Template →</a>
+      <a href="#features" class="btn btn-outline">Learn more</a>
+    </div>
+  </div>
+  <div class="reveal" style="width:100%;max-width:760px;position:relative;z-index:1;">
+    <div class="savings-pill">Savings <span class="amount">$2,380.00</span></div>
+    <div class="dashboard-card">
+      <div class="card-topbar">
+        <span class="dot dot-r"></span>
+        <span class="dot dot-y"></span>
+        <span class="dot dot-g"></span>
+        <span style="margin-left:12px;font-size:.78rem;color:var(--muted)">Dashboard — Overview</span>
+      </div>
+      <div class="card-content">
+        <div class="stat-block">
+          <div class="stat-label">Total Balance</div>
+          <div class="stat-value big">$13,289.00</div>
+        </div>
+        <div class="stat-block">
+          <div class="stat-label">Total Income</div>
+          <div class="stat-value">$2,350.00</div>
+        </div>
+        <div class="stat-block">
+          <div class="stat-label">Total Outcome</div>
+          <div class="stat-value">$5,620.00</div>
+        </div>
+        <div class="mini-chart">
+          <svg viewBox="0 0 600 80" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+            <defs>
+              <linearGradient id="cg" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#7c5cfc" stop-opacity=".4"/>
+                <stop offset="100%" stop-color="#7c5cfc" stop-opacity="0"/>
+              </linearGradient>
+            </defs>
+            <path d="M0,65 C60,60 80,40 120,35 C160,30 180,50 230,38 C280,26 300,15 340,20 C380,25 420,45 460,30 C500,15 540,10 600,12 L600,80 L0,80 Z" fill="url(#cg)"/>
+            <path d="M0,65 C60,60 80,40 120,35 C160,30 180,50 230,38 C280,26 300,15 340,20 C380,25 420,45 460,30 C500,15 540,10 600,12" stroke="#7c5cfc" stroke-width="2.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOGOS -->
+<section class="logos">
+  <div class="wrap">
+    <p class="logos-label">Trusted by teams at</p>
+    <div class="logos-row">
+      <span class="logo-item">⬡ Airtable</span>
+      <span class="logo-item">◈ Framer</span>
+      <span class="logo-item">◉ Asana</span>
+      <span class="logo-item">✦ Mailchimp</span>
+      <span class="logo-item">◆ Notion</span>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="features" id="features">
+  <div class="wrap">
+    <div class="section-label"><span class="tag">Features</span></div>
+    <h2 class="section-title">Everything you need to manage money</h2>
+    <p class="section-sub">From tracking expenses to splitting bills — Vibrant has you covered with a beautiful, intuitive interface.</p>
+
+    <!-- Feature 1 -->
+    <div class="feature-row reveal">
+      <div class="feature-text">
+        <span class="tag">Monthly Overview</span>
+        <h3>Check out your monthly summary with a glance.</h3>
+        <p>Vivamus facilisis, neque sit amet venenatis euismod, neque viverra velit, sit amet vehicula sapien elit eget tortor.</p>
+      </div>
+      <div class="feature-visual">
+        <div class="summary-card">
+          <div class="summary-row"><span class="label">Total Balance</span><span class="val">$13,289.00</span></div>
+          <div class="summary-row"><span class="label">Transport</span><span class="val">$320.00</span></div>
+          <div class="summary-row"><span class="label">Food &amp; Drinks</span><span class="val">$580.00</span></div>
+          <div class="summary-row"><span class="label">Savings</span><span class="val green">$2,380.00 <span class="pill-badge">+12%</span></span></div>
+          <div class="summary-row"><span class="label">Others</span><span class="val">$210.00</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Feature 2 -->
+    <div class="feature-row reverse reveal">
+      <div class="feature-text">
+        <span class="tag">Expense Control</span>
+        <h3>Control your expenses and save money.</h3>
+        <p>Vivamus facilisis, neque sit amet venenatis euismod, neque viverra velit, sit amet vehicula sapien elit eget tortor.</p>
+        <ul class="check-list">
+          <li>Molestie eget non libero viverra vitae nibh.</li>
+          <li>Aliquam in sollicitudin sem.</li>
+        </ul>
+      </div>
+      <div class="feature-visual">
+        <div class="expense-card">
+          <div style="font-size:.78rem;color:var(--muted);margin-bottom:8px;text-transform:uppercase;letter-spacing:.05em;">Monthly Spending</div>
+          <div class="expense-chart">
+            <div class="bar" style="height:45%" data-val="Jan"></div>
+            <div class="bar" style="height:60%" data-val="Feb"></div>
+            <div class="bar" style="height:35%" data-val="Mar"></div>
+            <div class="bar active" style="height:80%" data-val="Apr"></div>
+            <div class="bar" style="height:55%" data-val="May"></div>
+            <div class="bar" style="height:40%" data-val="Jun"></div>
+            <div class="bar" style="height:65%" data-val="Jul"></div>
+          </div>
+          <div class="expense-foot">
+            <span>$1,089.00</span>
+            <span class="pill-badge" style="color:var(--green);background:rgba(74,222,128,.1);border-color:rgba(74,222,128,.25);">Completed ✓</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Feature 3 -->
+    <div class="feature-row reveal">
+      <div class="feature-text">
+        <span class="tag">Bill Splitting</span>
+        <h3>Group bills? No problem, you can split it.</h3>
+        <p>Vivamus facilisis, neque sit amet venenatis euismod, est neque viverra velit, sit amet vehicula sapien elit eget tortor.</p>
+      </div>
+      <div class="feature-visual">
+        <div class="split-card">
+          <div class="split-header">
+            <span class="split-title">Los Angeles Trip</span>
+            <span class="split-amount">$18.00</span>
+          </div>
+          <div style="font-size:.75rem;color:var(--muted);margin-bottom:12px;">Participants — $622.00 total</div>
+          <div class="split-person">
+            <div class="avatar" style="background:#7c5cfc;">A</div>
+            <span class="split-name">Alexandra</span><span class="split-share">33%</span><span class="split-owed paid">$207 ✓</span>
+          </div>
+          <div class="split-person">
+            <div class="avatar" style="background:#38bdf8;">B</div>
+            <span class="split-name">Brandon</span><span class="split-share">33%</span><span class="split-owed pending">$207 ⏳</span>
+          </div>
+          <div class="split-person">
+            <div class="avatar" style="background:#4ade80;">C</div>
+            <span class="split-name">Christina</span><span class="split-share">34%</span><span class="split-owed paid">$208 ✓</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<section>
+  <div class="wrap">
+    <div class="cta-banner reveal">
+      <div class="cta-text">
+        <span class="tag" style="margin-bottom:20px;display:inline-block;">Get Started Today</span>
+        <h2>Download the app and start today!</h2>
+        <p>No credit card required. Start your free trial and experience the future of finance.</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;">
+          <a href="#pricing" class="btn">Buy Template →</a>
+          <a href="#" class="btn btn-outline">Learn more</a>
+        </div>
+        <p style="font-size:.75rem;color:var(--muted);margin-top:12px;">*No credit card required</p>
+      </div>
+      <div class="cta-visual">
+        <div class="mini-dash">
+          <div class="mini-dash-header">Today's Overview</div>
+          <div class="mini-dash-value">$13,289.00</div>
+          <div class="mini-bars">
+            <div class="mini-bar" style="height:30%"></div>
+            <div class="mini-bar" style="height:50%"></div>
+            <div class="mini-bar" style="height:40%"></div>
+            <div class="mini-bar hi" style="height:90%"></div>
+            <div class="mini-bar" style="height:65%"></div>
+            <div class="mini-bar" style="height:45%"></div>
+            <div class="mini-bar" style="height:70%"></div>
+            <div class="mini-bar" style="height:55%"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <div class="wrap">
+    <h2 class="section-title reveal">What people say</h2>
+    <div class="testi-grid">
+      <div class="testi-card reveal">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">Fusce quis sapien tristique mauris tempor tristique. Donec efficitur gravida nibh, ac aliquet diam volutpat non.</p>
+        <div class="testi-author">
+          <div class="testi-avatar" style="background:#7c5cfc;">B</div>
+          <div><div class="testi-name">Bryan Smith</div><div class="testi-role">CEO, Framer</div></div>
+        </div>
+      </div>
+      <div class="testi-card reveal">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">Morbi at metus accumsan, posuere mi quis, tempus tortor. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+        <div class="testi-author">
+          <div class="testi-avatar" style="background:#38bdf8;">B</div>
+          <div><div class="testi-name">Bryan Smith</div><div class="testi-role">CEO, Framer</div></div>
+        </div>
+      </div>
+      <div class="testi-card reveal">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">Mauris nulla ex, rutrum vitae faucibus cursus, bibendum nec arcu. Exceptional product that changed how we manage team finances.</p>
+        <div class="testi-author">
+          <div class="testi-avatar" style="background:#4ade80;">B</div>
+          <div><div class="testi-name">Bryan Smith</div><div class="testi-role">CEO, Framer</div></div>
+        </div>
+      </div>
+      <div class="testi-card reveal">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">Curabitur gravida placerat purus nec bibendum. Proin porttitor varius risus blandit dictum. Vestibulum at erat ut velit egestas venenatis.</p>
+        <div class="testi-author">
+          <div class="testi-avatar" style="background:#f472b6;">B</div>
+          <div><div class="testi-name">Bryan Smith</div><div class="testi-role">CEO, Framer</div></div>
+        </div>
+      </div>
+      <div class="testi-card reveal">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">Integer fringilla erat vel sem luctus posuere. Donec efficitur gravida nibh, ac aliquet diam volutpat non. Truly remarkable.</p>
+        <div class="testi-author">
+          <div class="testi-avatar" style="background:#fb923c;">B</div>
+          <div><div class="testi-name">Bryan Smith</div><div class="testi-role">CEO, Framer</div></div>
+        </div>
+      </div>
+      <div class="testi-card reveal">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">Curabitur gravida placerat purus nec bibendum. Proin porttitor varius risus blandit dictum. Vestibulum at erat ut velit egestas venenatis sit amet nec metus.</p>
+        <div class="testi-author">
+          <div class="testi-avatar" style="background:#a78bfa;">B</div>
+          <div><div class="testi-name">Bryan Smith</div><div class="testi-role">CEO, Framer</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing" id="pricing">
+  <div class="wrap">
+    <div class="section-label"><span class="tag">Pricing</span></div>
+    <h2 class="section-title reveal">Ready to get started?</h2>
+    <p class="section-sub reveal">Choose a plan that fits your needs.</p>
+    <div class="pricing-grid">
+      <div class="price-card reveal">
+        <div class="price-name">Personal</div>
+        <div class="price-desc">Best for brands that need designs on an ongoing basis.</div>
+        <div class="price-amount">
+          <span class="cur">$</span><span class="num">2.99</span><span class="per">/mo</span>
+        </div>
+        <a href="#" class="btn btn-outline">Try For Free</a>
+        <ul class="price-feat">
+          <li><span class="ico">✓</span> Request unlimited designs</li>
+          <li><span class="ico">✓</span> Deliverables as you need</li>
+          <li><span class="ico">✓</span> No limit on revisions</li>
+        </ul>
+      </div>
+      <div class="price-card featured reveal">
+        <div class="price-name">Business</div>
+        <div class="price-desc">Best for brands that need designs on an ongoing basis.</div>
+        <div class="price-amount">
+          <span class="cur">$</span><span class="num">8.99</span><span class="per">/mo</span>
+        </div>
+        <a href="#" class="btn">Try For Free</a>
+        <ul class="price-feat">
+          <li><span class="ico">✓</span> Request unlimited designs</li>
+          <li><span class="ico">✓</span> Deliverables as you need</li>
+          <li><span class="ico">✓</span> No limit on revisions</li>
+          <li><span class="ico">✓</span> No code needed</li>
+          <li><span class="ico">✓</span> Individual help center</li>
+          <li><span class="ico">✓</span> Your personal mentor</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="footer-inner">
+      <a href="#" class="logo">vibrant<span>.</span></a>
+      <div class="footer-links">
+        <a href="#">Home</a>
+        <a href="#">FAQ</a>
+        <a href="#">Blog</a>
+      </div>
+      <a href="#pricing" class="btn" style="padding:10px 20px;font-size:.85rem;">Buy Template</a>
+    </div>
+    <div class="footer-bottom">
+      <span>Vibrant is a Framer template made for SaaS companies.</span>
+      <span>Made with ♥ Development: <a href="mailto:victor@vo1d.ru">victor@vo1d.ru</a></span>
+      
+    </div>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>

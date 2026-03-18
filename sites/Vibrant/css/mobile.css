@@ -1,0 +1,216 @@
+/* ═══════════════════════════════════════════════════════════
+   mobile.css — Responsive overrides for mobile (≤ 580px)
+   Vibrant Landing Page
+════════════════════════════════════════════════════════════ */
+
+/* ── MOBILE BREAKPOINT: ≤ 640px ─────────────────────────── */
+@media (max-width: 640px) {
+
+  /* Pricing — stack to 1 column */
+  .pricing-grid {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+  }
+
+  .price-card.featured::before {
+    font-size: .68rem;
+  }
+}
+
+/* ── MOBILE BREAKPOINT: ≤ 580px ─────────────────────────── */
+@media (max-width: 580px) {
+
+  /* Dashboard card */
+  .card-content {
+    grid-template-columns: 1fr;
+    padding: 20px;
+    gap: 12px;
+  }
+
+  /* Hide savings pill — too cramped */
+  .savings-pill {
+    display: none;
+  }
+
+  /* Testimonials — single column */
+  .testi-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* CTA banner */
+  .cta-banner {
+    padding: 36px 20px;
+    margin-bottom: 60px;
+  }
+
+  /* Logos */
+  .logos-row {
+    gap: 20px;
+    justify-content: center;
+  }
+
+  .logo-item {
+    font-size: .9rem;
+  }
+
+  /* Hero */
+  .hero h1 {
+    font-size: clamp(2rem, 9vw, 2.8rem);
+    letter-spacing: -.025em;
+  }
+
+  .hero p {
+    font-size: .95rem;
+  }
+
+  .hero-cta {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 40px;
+  }
+
+  .hero-cta .btn {
+    width: 100%;
+    justify-content: center;
+    max-width: 280px;
+  }
+
+  /* Buttons */
+  .btn {
+    font-size: .85rem;
+    padding: 11px 20px;
+  }
+
+  /* Section typography */
+  .section-title {
+    font-size: clamp(1.5rem, 6vw, 2.2rem);
+  }
+
+  .section-sub {
+    font-size: .88rem;
+    padding: 0 8px;
+    margin-bottom: 36px;
+  }
+
+  /* Feature text */
+  .feature-text h3 {
+    font-size: clamp(1.2rem, 5vw, 1.7rem);
+  }
+
+  .feature-text p {
+    font-size: .88rem;
+  }
+
+  /* Feature visual */
+  .feature-visual {
+    padding: 18px;
+    min-height: 180px;
+  }
+
+  /* Summary card */
+  .summary-row {
+    font-size: .82rem;
+    padding: 10px 0;
+  }
+
+  /* Split card */
+  .split-person {
+    font-size: .8rem;
+    gap: 8px;
+  }
+
+  .avatar {
+    width: 28px;
+    height: 28px;
+    font-size: .7rem;
+  }
+
+  /* Testi cards */
+  .testi-card {
+    padding: 22px 20px;
+  }
+
+  .testi-text {
+    font-size: .85rem;
+  }
+
+  /* Pricing */
+  .price-card {
+    padding: 32px 24px;
+  }
+
+  .price-amount .num {
+    font-size: 2.8rem;
+  }
+
+  /* Footer */
+  .footer-links {
+    gap: 16px;
+  }
+
+  .footer-bottom {
+    text-align: left;
+    font-size: .73rem;
+  }
+
+  /* Nav mobile CTA */
+  .mobile-menu .btn {
+    width: 100%;
+    justify-content: center;
+    max-width: none;
+  }
+}
+
+/* ── MOBILE BREAKPOINT: ≤ 400px ─────────────────────────── */
+@media (max-width: 400px) {
+
+  :root {
+    --nav-h: 64px;
+  }
+
+  .logo {
+    font-size: 1.2rem;
+  }
+
+  .hero h1 {
+    font-size: clamp(1.8rem, 10vw, 2.4rem);
+  }
+
+  .card-topbar {
+    padding: 10px 14px;
+    font-size: .72rem;
+  }
+
+  .stat-value.big {
+    font-size: 1.8rem;
+  }
+
+  .stat-value {
+    font-size: 1.2rem;
+  }
+
+  .mini-chart {
+    height: 60px;
+  }
+
+  .cta-banner {
+    padding: 28px 16px;
+  }
+
+  .cta-text h2 {
+    font-size: 1.4rem;
+  }
+
+  .features {
+    padding: 60px 0;
+  }
+
+  .feature-row {
+    margin-bottom: 48px;
+  }
+
+  .wrap {
+    padding: 0 16px;
+  }
+}

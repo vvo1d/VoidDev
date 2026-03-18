@@ -1,0 +1,167 @@
+/* ═══════════════════════════════════════════════════════════
+   tablet.css — Responsive overrides for tablets (≤ 1024px)
+   Vibrant Landing Page
+════════════════════════════════════════════════════════════ */
+
+/* ── TABLET BREAKPOINT: ≤ 1024px ─────────────────────────── */
+@media (max-width: 1024px) {
+
+  /* Nav */
+  .nav-links {
+    gap: 20px;
+  }
+
+  /* Hero */
+  .hero h1 {
+    font-size: clamp(2.4rem, 5vw, 3.8rem);
+  }
+
+  /* Features */
+  .feature-row {
+    gap: 40px 48px;
+    margin-bottom: 72px;
+  }
+
+  /* Pricing */
+  .pricing-grid {
+    max-width: 680px;
+  }
+
+  .price-card {
+    padding: 32px 28px;
+  }
+
+  /* CTA */
+  .cta-banner {
+    padding: 56px 40px;
+    gap: 32px;
+  }
+}
+
+/* ── TABLET BREAKPOINT: ≤ 900px ─────────────────────────── */
+@media (max-width: 900px) {
+
+  /* Nav — hide links, show hamburger */
+  .nav-links,
+  .nav-cta .btn-outline {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  /* Hero dashboard card */
+  .card-content {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* Testimonials — 2 columns */
+  .testi-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Features section */
+  .section-sub {
+    margin-bottom: 52px;
+  }
+}
+
+/* ── TABLET BREAKPOINT: ≤ 860px ─────────────────────────── */
+@media (max-width: 860px) {
+
+  /* Features — stack vertically */
+  .feature-row {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    margin-bottom: 64px;
+  }
+
+  .feature-row.reverse .feature-visual {
+    order: unset;
+  }
+
+  .feature-visual {
+    min-height: 200px;
+  }
+
+  /* CTA banner */
+  .cta-banner {
+    grid-template-columns: 1fr;
+    padding: 48px 32px;
+  }
+
+  .cta-visual {
+    max-width: 400px;
+  }
+}
+
+/* ── TABLET BREAKPOINT: ≤ 768px ─────────────────────────── */
+@media (max-width: 768px) {
+
+  /* Logos */
+  .logos-row {
+    gap: 28px;
+  }
+
+  .logo-item {
+    font-size: 1rem;
+  }
+
+  /* Hero */
+  .hero {
+    padding: calc(var(--nav-h) + 40px) 20px 60px;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  /* Section */
+  .section-sub {
+    font-size: .93rem;
+    margin-bottom: 44px;
+  }
+
+  /* Features */
+  .features {
+    padding: 80px 0;
+  }
+
+  .feature-text h3 {
+    font-size: clamp(1.3rem, 3vw, 1.9rem);
+  }
+
+  /* Testimonials */
+  .testimonials {
+    padding: 0 0 80px;
+  }
+
+  /* Pricing */
+  .pricing {
+    padding: 0 0 100px;
+  }
+
+  /* CTA */
+  .cta-banner {
+    margin-bottom: 80px;
+    padding: 40px 28px;
+  }
+
+  .cta-text h2 {
+    font-size: clamp(1.6rem, 4vw, 2.4rem);
+  }
+
+  /* Footer */
+  .footer-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}
