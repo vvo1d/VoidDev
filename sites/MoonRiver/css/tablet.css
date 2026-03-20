@@ -1,0 +1,187 @@
+/* =============================================
+   MOON RIVER — Tablet styles
+   max-width: 1024px
+   ============================================= */
+
+@media (max-width: 1024px) {
+
+  :root {
+    --split: 55%;
+    --header-pad-x: 48px;
+  }
+
+  /* Header */
+  .header {
+    padding: 28px 32px 28px var(--header-pad-x);
+  }
+
+  /* Hero title */
+  .hero__title {
+    font-size: 64px;
+  }
+
+  /* Hero image */
+  .hero__image-wrap {
+    width: 340px;
+    top: 44%;   /* совпадает с desktop — держим единое значение */
+  }
+
+  /* Product info */
+  .hero__right {
+    padding-bottom: 64px;
+    padding-right: 48px;
+  }
+
+  .product__price {
+    font-size: 18px;
+  }
+
+  /* Footer */
+  .footer {
+    padding: 0 32px 28px var(--header-pad-x);
+  }
+}
+
+@media (max-width: 900px) {
+
+  :root {
+    --split: 52%;
+  }
+
+  .hero__title {
+    font-size: 54px;
+  }
+
+  .hero__image-wrap {
+    width: 300px;
+    top: 44%;
+  }
+
+  .hero__right {
+    padding-right: 36px;
+    padding-bottom: 56px;
+  }
+
+  /* Категории */
+  .category__title {
+    font-size: 44px;
+  }
+
+  /* Бутик */
+  .boutique__info {
+    padding: 0 48px;
+  }
+
+  .boutique__title {
+    font-size: 40px;
+  }
+}
+
+/* ── Дополнительные переходы для tablet ────── */
+@media (max-width: 1024px) {
+
+  /* Соцсети */
+  .social-feed__title {
+    font-size: 52px;
+  }
+
+  .social-feed__top {
+    padding: 0 48px;
+    margin-bottom: 36px;
+  }
+
+  .social-feed__bottom {
+    padding: 32px 48px 0;
+  }
+
+  /* Каталог */
+  .catalog__grid {
+    min-height: auto;
+    height: 100vh;
+  }
+
+  .product-card__img-wrap {
+    padding: 28px 32px 16px;
+  }
+
+  .product-card__img {
+    max-height: 160px;
+  }
+
+  .product-card__info {
+    padding: 16px 24px 24px;
+  }
+
+  .product-card__name {
+    font-size: 10px;
+  }
+
+  .product-card__price {
+    font-size: 16px;
+  }
+
+  /* Категории */
+  .categories {
+    height: 55vh;
+  }
+
+  .category__title {
+    font-size: 48px;
+  }
+
+  /* Бутик */
+  .boutique {
+    height: 55vh;
+  }
+
+  .boutique__info {
+    padding: 0 56px;
+  }
+
+  .boutique__title {
+    font-size: 44px;
+    margin-bottom: 20px;
+  }
+
+  .boutique__desc {
+    margin-bottom: 36px;
+  }
+
+  /* Контакты */
+  .contacts {
+    height: 55vh;
+  }
+
+  .contacts__content {
+    padding: 60px 56px;
+    gap: 44px;
+  }
+
+  .contacts__phone {
+    font-size: 24px;
+  }
+
+  /* Footer */
+  .footer-nav {
+    padding: 32px 48px;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .footer-main {
+    padding: 52px 48px 64px;
+    gap: 28px;
+  }
+
+  .footer-logo__text {
+    font-size: 32px;
+  }
+
+  .footer-phone {
+    font-size: 20px;
+  }
+
+  .footer-apps {
+    flex-direction: column;
+  }
+}

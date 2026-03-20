@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Moon River — High Jewelry</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Forum&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/tablet.css">
+  <link rel="stylesheet" href="css/mobile.css">
+</head>
+<body>
+
+  <!-- Split background -->
+  <div class="bg-split" aria-hidden="true">
+    <div class="bg-split__left"></div>
+    <div class="bg-split__right"></div>
+  </div>
+
+  <div class="page-wrapper">
+
+    <!-- Header -->
+    <header class="header">
+      <div class="header__left">
+        <a href="/" class="logo" aria-label="Moon River — на главную">
+          <span class="logo__text">M<span class="logo__o">o</span><span class="logo__o">o</span>n&nbsp;River</span>
+        </a>
+      </div>
+      <div class="header__right">
+        <nav class="header__nav" aria-label="Панель управления">
+
+          <!-- Wishlist -->
+          <button class="nav-icon" aria-label="Избранное">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 21C12 21 3 14.5 3 8.5C3 5.42 5.42 3 8.5 3C10.24 3 11.81 3.89 12 5C12.19 3.89 13.76 3 15.5 3C18.58 3 21 5.42 21 8.5C21 14.5 12 21 12 21Z"/>
+            </svg>
+          </button>
+
+          <!-- Account -->
+          <button class="nav-icon" aria-label="Личный кабинет">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="8" r="4"/>
+              <path d="M4 20C4 16.69 7.58 14 12 14C16.42 14 20 16.69 20 20"/>
+            </svg>
+          </button>
+
+          <!-- Cart -->
+          <button class="nav-icon nav-icon--cart" aria-label="Корзина, 1 товар">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="5" y="11" width="14" height="10" rx="1"/>
+              <path d="M8 11V7C8 4.79 9.79 3 12 3C14.21 3 16 4.79 16 7V11"/>
+            </svg>
+            <span class="cart-count">1</span>
+          </button>
+
+          <!-- Menu -->
+          <button class="nav-icon nav-icon--menu" aria-label="Меню" id="menuBtn">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <line x1="3" y1="6" x2="21" y2="6"/>
+              <line x1="3" y1="12" x2="21" y2="12"/>
+              <line x1="3" y1="18" x2="21" y2="18"/>
+            </svg>
+          </button>
+
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <main class="hero">
+
+      <div class="hero__left">
+        <div class="hero__content">
+          <h1 class="hero__title">High Jewelry</h1>
+          <div class="hero__cta">
+            <span class="hero__line" aria-hidden="true"></span>
+            <a href="#" class="hero__link">Смотреть коллекцию</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ring image centered on split line -->
+      <div class="hero__image-wrap" aria-hidden="true">
+        <img src="img/ring.svg" alt="Кольцо Trinity, Cartier — белое золото, бриллианты" class="hero__image">
+      </div>
+
+      <div class="hero__right">
+        <div class="hero__product">
+          <p class="product__name">Кольцо Trinity, Cartier</p>
+          <p class="product__material">Белое золото, бриллианты</p>
+          <p class="product__price">498 000 Р</p>
+        </div>
+      </div>
+
+    </main>
+
+    <!-- Lang switcher — нижний левый угол первого экрана -->
+    <div class="lang-block">
+      <div class="lang-block__left">
+        <nav class="lang-switcher" aria-label="Выбор языка">
+          <a href="#" class="lang-switcher__item lang-switcher__item--active" lang="ru" aria-current="true">RU</a>
+          <a href="#" class="lang-switcher__item" lang="en">EN</a>
+        </nav>
+      </div>
+      <div class="lang-block__right"></div>
+    </div>
+
+  </div><!-- .page-wrapper -->
+
+  <!-- ══════════════════════════════════════════
+       СЕКЦИЯ 2: Для мужчин / Для женщин
+  ══════════════════════════════════════════ -->
+  <section class="categories" aria-label="Категории">
+
+    <a href="#" class="category category--men">
+      <div class="category__overlay" aria-hidden="true"></div>
+      <div class="category__content">
+        <span class="category__label">Перейти в раздел</span>
+        <h2 class="category__title">Для мужчин</h2>
+        <span class="category__line" aria-hidden="true"></span>
+      </div>
+    </a>
+
+    <a href="#" class="category category--women">
+      <div class="category__overlay" aria-hidden="true"></div>
+      <div class="category__content">
+        <span class="category__label">Перейти в раздел</span>
+        <h2 class="category__title">Для женщин</h2>
+        <span class="category__line" aria-hidden="true"></span>
+      </div>
+    </a>
+    
+
+  </section>
+    <section class="boutique" aria-label="Найти бутик">
+
+    <div class="boutique__info">
+      <h2 class="boutique__title">Найди<br>бутик около себя</h2>
+      <p class="boutique__desc">Введите свой адрес и узнайте о самых<br>ближайших бутиках к вам</p>
+      <form class="boutique__form" id="boutiqueForm">
+        <input
+          type="text"
+          class="boutique__input"
+          id="boutiqueAddress"
+          placeholder="Введите адрес"
+          autocomplete="off"
+          aria-label="Введите адрес для поиска бутиков"
+        >
+        <button type="submit" class="boutique__submit" aria-label="Найти бутик">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <line x1="5" y1="12" x2="19" y2="12"/>
+            <polyline points="13 6 19 12 13 18"/>
+          </svg>
+        </button>
+      </form>
+    </div>
+
+    <div class="boutique__map" id="boutiqueMap" aria-label="Карта бутиков"></div>
+
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       СЕКЦИЯ 3: Каталог товаров
+  ══════════════════════════════════════════ -->
+  <section class="catalog" aria-label="Каталог украшений">
+    <div class="catalog__grid">
+
+      <!-- Левая колонка, верх -->
+      <a href="#" class="product-card product-card--lt">
+        <div class="product-card__img-wrap">
+          <img src="img/ring-jows.png" alt="Кольцо Jow's, Cartier" class="product-card__img">
+        </div>
+        <div class="product-card__info">
+          <p class="product-card__name">Кольцо Jow's, Cartier</p>
+          <p class="product-card__material">Белое золото, бриллианты</p>
+          <p class="product-card__price">674 000 Р</p>
+        </div>
+      </a>
+
+      <!-- Центральная карточка (2 строки) -->
+      <a href="#" class="product-card product-card--featured">
+        <div class="product-card__info product-card__info--overlay">
+          <p class="product-card__name">Колье Etoile, Hublot</p>
+          <p class="product-card__material">Белое золото, бриллианты</p>
+          <p class="product-card__price">539 000 Р</p>
+        </div>
+      </a>
+
+      <!-- Правая колонка, верх -->
+      <a href="#" class="product-card product-card--rt">
+        <div class="product-card__img-wrap">
+          <img src="img/earrings-moon.png" alt="Серьги Moon, Hublot" class="product-card__img">
+        </div>
+        <div class="product-card__info">
+          <p class="product-card__name">Серьги Moon, Hublot</p>
+          <p class="product-card__material">Желтое золото, сапфир</p>
+          <p class="product-card__price">498 000 Р</p>
+        </div>
+      </a>
+
+      <!-- Левая колонка, низ -->
+      <a href="#" class="product-card product-card--lb">
+        <div class="product-card__img-wrap">
+          <img src="img/ring-croix.png" alt="Кольцо Croix, Cartier" class="product-card__img">
+        </div>
+        <div class="product-card__info">
+          <p class="product-card__name">Кольцо Croix, Cartier</p>
+          <p class="product-card__material">Желтое, белое, розовое золото</p>
+          <p class="product-card__price">432 000 Р</p>
+        </div>
+      </a>
+
+      <!-- Правая колонка, низ -->
+      <a href="#" class="product-card product-card--rb">
+        <div class="product-card__img-wrap">
+          <img src="img/earrings-win.png" alt="Серьги Win, Blancpain" class="product-card__img">
+        </div>
+        <div class="product-card__info">
+          <p class="product-card__name">Серьги Win, Blancpain</p>
+          <p class="product-card__material">Желтое золото, жемчуг</p>
+          <p class="product-card__price">398 000 Р</p>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       СЕКЦИЯ 4: Мы в социальных сетях
+  ══════════════════════════════════════════ -->
+  <section class="social-feed" aria-label="Мы в социальных сетях">
+
+    <div class="social-feed__top">
+      <h2 class="social-feed__title">Мы<br>в социальных сетях</h2>
+    </div>
+
+    <!-- Слайдер -->
+    <div class="social-feed__slider" id="socialSlider">
+      <div class="social-feed__track" id="socialTrack">
+        <div class="social-feed__slide sf-slide--1"></div>
+        <div class="social-feed__slide sf-slide--2"></div>
+        <div class="social-feed__slide sf-slide--3"></div>
+        <div class="social-feed__slide sf-slide--4"></div>
+        <div class="social-feed__slide sf-slide--5"></div>
+        <div class="social-feed__slide sf-slide--6"></div>
+        <div class="social-feed__slide sf-slide--7"></div>
+        <div class="social-feed__slide sf-slide--8"></div>
+      </div>
+    </div>
+
+    <!-- Нижняя панель -->
+    <div class="social-feed__bottom">
+
+      <div class="social-feed__networks">
+        <a href="#" class="social-net" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+          </svg>
+        </a>
+        <a href="#" class="social-net" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+            <circle cx="12" cy="12" r="4"/>
+            <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+          </svg>
+        </a>
+      </div>
+
+      <div class="social-feed__controls">
+        <button class="slider-btn slider-btn--prev" id="socialPrev" aria-label="Предыдущий слайд">
+          <svg viewBox="0 0 40 16" aria-hidden="true">
+            <line x1="38" y1="8" x2="2" y2="8"/>
+            <polyline points="10 1 2 8 10 15"/>
+          </svg>
+        </button>
+        <div class="slider-dots" id="socialDots" role="tablist" aria-label="Переключение слайдов"></div>
+        <button class="slider-btn slider-btn--next" id="socialNext" aria-label="Следующий слайд">
+          <svg viewBox="0 0 40 16" aria-hidden="true">
+            <line x1="2" y1="8" x2="38" y2="8"/>
+            <polyline points="30 1 38 8 30 15"/>
+          </svg>
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       СЕКЦИЯ 5: Контакты и подписка
+  ══════════════════════════════════════════ -->
+  <section class="contacts" aria-label="Контакты и подписка">
+
+    <div class="contacts__photo" aria-hidden="true">
+      <img src="img/women2.jpg" alt="" class="contacts__photo-img">
+    </div>
+
+    <div class="contacts__content">
+
+      <div class="contacts__block">
+        <p class="contacts__label">Телефон флагманского магазина</p>
+        <a href="tel:+7800456456" class="contacts__phone">+7 800 456 456</a>
+      </div>
+
+      <div class="contacts__block">
+        <p class="contacts__label">Подпишитесь на новости</p>
+        <form class="contacts__form" aria-label="Подписка на новости">
+          <input
+            type="email"
+            class="contacts__input"
+            placeholder="Введите E-mail"
+            aria-label="Email адрес"
+            autocomplete="email"
+          >
+          <button type="submit" class="contacts__submit" aria-label="Подписаться">
+            <svg viewBox="0 0 40 16" aria-hidden="true">
+              <line x1="2" y1="8" x2="38" y2="8"/>
+              <polyline points="30 1 38 8 30 15"/>
+            </svg>
+          </button>
+        </form>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════════ -->
+  <footer class="site-footer" aria-label="Подвал сайта">
+
+    <!-- Верхняя навигация -->
+    <nav class="footer-nav" aria-label="Информационные страницы">
+      <a href="#" class="footer-nav__link">Работа в компании</a>
+      <a href="#" class="footer-nav__link">Условия пользования</a>
+      <a href="#" class="footer-nav__link">Выходные данные</a>
+      <a href="#" class="footer-nav__link">Политика конфиденциальности</a>
+      <a href="#" class="footer-nav__link">Карта сайта</a>
+    </nav>
+
+    <!-- Основной блок -->
+    <div class="footer-main">
+
+      <!-- Логотип -->
+      <div class="footer-logo">
+        <a href="/" aria-label="Moon River — на главную">
+          <span class="footer-logo__text">M<span class="footer-logo__o">o</span><span class="footer-logo__o">o</span>n&nbsp;River</span>
+        </a>
+      </div>
+
+      <!-- Телефон + соцсети -->
+      <div class="footer-contacts">
+        <p class="footer-label">Телефон горячей линии</p>
+        <a href="tel:+7800456456" class="footer-phone">+7 800 456 456</a>
+        <div class="footer-socials">
+          <a href="#" class="footer-social" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+            </svg>
+          </a>
+          <a href="#" class="footer-social" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+              <circle cx="12" cy="12" r="4"/>
+              <circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Подписка + приложения -->
+      <div class="footer-subscribe">
+        <p class="footer-label">Подпишитесь на новости</p>
+        <form class="footer-form" aria-label="Подписка на новости">
+          <input
+            type="email"
+            class="footer-input"
+            placeholder="Введите E-mail"
+            aria-label="Email адрес"
+            autocomplete="email"
+          >
+          <button type="submit" class="footer-submit" aria-label="Подписаться">
+            <svg viewBox="0 0 40 16" aria-hidden="true">
+              <line x1="2" y1="8" x2="38" y2="8"/>
+              <polyline points="30 1 38 8 30 15"/>
+            </svg>
+          </button>
+        </form>
+        <div class="footer-apps">
+          <a href="#" class="footer-app-badge" aria-label="Загрузить в App Store">
+            <svg class="footer-app-badge__icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+            </svg>
+            <span class="footer-app-badge__text">
+              <span class="footer-app-badge__sub">Загрузите в</span>
+              <span class="footer-app-badge__title">App Store</span>
+            </span>
+          </a>
+          <a href="#" class="footer-app-badge" aria-label="Доступно в Google Play">
+            <svg class="footer-app-badge__icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M3 20.5v-17c0-.9 1.06-1.37 1.73-.75l15 8.5c.6.34.6 1.16 0 1.5l-15 8.5C4.06 21.87 3 21.4 3 20.5z"/>
+            </svg>
+            <span class="footer-app-badge__text">
+              <span class="footer-app-badge__sub">Доступно в</span>
+              <span class="footer-app-badge__title">Google Play</span>
+            </span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

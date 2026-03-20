@@ -219,6 +219,15 @@ const projects = [
     image: './img/Vibrant.webp',
     demoUrl: './sites/Vibrant/index.html',
   },
+  {
+    id: 8,
+    title: 'MoonRiver',
+    desc: 'Сайт ювелирных изделий',
+    tags: ['HTML', 'CSS', 'JS'],
+    image: './img/MoonRiver.webp',
+    demoUrl: './sites/MoonRiver/index.html',
+  },
+
 ];
 
 function renderProjects() {
