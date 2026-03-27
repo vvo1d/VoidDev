@@ -227,6 +227,14 @@ const projects = [
     image: './img/MoonRiver.webp',
     demoUrl: './sites/MoonRiver/index.html',
   },
+  {
+    id: 9,
+    title: 'DesignStudio',
+    desc: 'Студия дизайна',
+    tags: ['HTML', 'CSS', 'JS'],
+    image: './img/DesignStudio.webp',
+    demoUrl: './sites/DesignStudio/index.html',
+  }
 
 ];
 

@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Primary SEO -->
+  <title>Görm — Branding & Digital Design Studio | New York</title>
+  <meta name="description" content="Görm is an award-winning UI/UX design and branding agency based in New York. We create digital experiences, websites, and brand identities that inspire.">
+  <meta name="keywords" content="branding studio, digital design, UI UX design, web design, New York, prototyping, development">
+  <meta name="author" content="Görm Design Studio">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://example.com/">
+
+  <!-- Open Graph (Facebook, LinkedIn) -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://example.com/">
+  <meta property="og:title" content="Görm — Branding & Digital Design Studio">
+  <meta property="og:description" content="Award-winning UI/UX design and branding agency based in New York. We build experiences.">
+  <meta property="og:image" content="https://example.com/img/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Görm — Branding & Digital Design Studio">
+  <meta name="twitter:description" content="Award-winning UI/UX design and branding agency based in New York.">
+  <meta name="twitter:image" content="https://example.com/img/og-image.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+  <link rel="icon" type="image/png" href="img/favicon.png">
+  <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+  <meta name="theme-color" content="#000000">
+
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Görm Design Studio",
+    "description": "Award-winning UI/UX design and branding agency based in New York.",
+    "url": "https://example.com",
+    "logo": "https://example.com/img/logo.svg",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "New York",
+      "addressCountry": "US"
+    },
+    "telephone": "+10042145700",
+    "email": "hello@görm.com",
+    "sameAs": [
+      "https://instagram.com/",
+      "https://twitter.com/",
+      "https://dribbble.com/"
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="fonts/fonts.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/tablet.css">
+  <link rel="stylesheet" href="css/mobile.css">
+</head>
+<body>
+
+  <main>
+
+  <!-- ===== SECTION 1: HERO ===== -->
+  <section class="hero">
+
+    <!-- HEADER -->
+    <header class="header">
+      <div class="header__left">
+        <a href="#" class="header__logo">
+          <img src="img/logo.svg" alt="Logo">
+        </a>
+        <div class="header__info">
+          <span class="header__info-title">BRANDING &amp;<br>DESIGN STUDIO</span>
+          <span class="header__info-location">DOUBLE BAY 2028,<br>NEW YORK</span>
+        </div>
+      </div>
+
+      <div class="header__center">
+        <button class="burger" aria-label="Menu">
+          <span class="burger__line"></span>
+          <span class="burger__line"></span>
+          <span class="burger__line"></span>
+        </button>
+      </div>
+
+      <div class="header__right">
+        <a href="#" class="cart" aria-label="Cart">
+          <img src="img/icons/cart.svg" alt="Cart">
+          <!-- <span class="cart__count">0</span> -->
+        </a>
+        <a href="#" class="btn-contact">CONTACT US</a>
+      </div>
+    </header>
+
+    <!-- HERO CONTENT -->
+    <div class="hero__content">
+      <h1 class="hero__title">
+        BRANDING &amp;<br>
+        DIGITAL DESIGN<br>
+        SUTDIO.
+      </h1>
+    </div>
+
+    <!-- SOCIAL LINKS -->
+    <div class="hero__social">
+      <a href="#" class="hero__social-link">
+        <img src="img/icons/instagram.svg" alt="Instagram">
+        <span>Instagram</span>
+      </a>
+      <a href="#" class="hero__social-link">
+        <img src="img/icons/twitter.svg" alt="Twitter">
+        <span>Twitter</span>
+      </a>
+      <a href="#" class="hero__social-link">
+        <img src="img/icons/dribbble.svg" alt="Dribbble">
+        <span>Dribbble</span>
+      </a>
+    </div>
+
+    <!-- SCROLL INDICATOR -->
+    <div class="hero__scroll">
+      <div class="hero__scroll-mouse">
+        <div class="hero__scroll-wheel"></div>
+      </div>
+    </div>
+
+    <!-- NEXT ARROW -->
+    <button class="hero__next" aria-label="Next">
+      <img src="img/icons/arrow-right.svg" alt="Next">
+    </button>
+
+  </section>
+  <!-- ===== END SECTION 1 ===== -->
+
+  <!-- ===== SECTION 2: ABOUT ===== -->
+  <section class="about">
+
+    <!-- PHOTOS ROW -->
+    <div class="about__photos">
+      <div class="about__photo about__photo--left">
+        <img src="img/about-1.jpg" alt="Designer at work">
+      </div>
+      <div class="about__photo about__photo--right">
+        <img src="img/about-2.jpg" alt="Team at work">
+      </div>
+
+      <!-- CIRCULAR PLAY / SHOWREEL BUTTON -->
+      <button class="about__showreel" aria-label="Play Showreel">
+        <svg class="about__showreel-ring" viewBox="0 0 140 140" aria-hidden="true">
+          <defs>
+            <path id="showreel-path"
+              d="M 70,70 m -52,0 a 52,52 0 1,1 104,0 a 52,52 0 1,1 -104,0"/>
+          </defs>
+          <text fill="#ffffff" font-size="11" font-family="Roboto, sans-serif"
+                font-weight="700" letter-spacing="3" text-transform="uppercase">
+            <textPath href="#showreel-path">PLAY SHOWREEL • PLAY SHOWREEL •</textPath>
+          </text>
+        </svg>
+        <span class="about__showreel-play">
+          <img src="img/icons/play.svg" alt="Play">
+        </span>
+      </button>
+    </div>
+
+    <!-- TEXT CONTENT -->
+    <div class="about__content">
+      <div class="about__content-left">
+        <h2 class="about__title">
+          WE'RE A<br>
+          CREATIVE<br>
+          DIGITAL<br>
+          STUDIO
+        </h2>
+      </div>
+      <div class="about__content-right">
+        <p class="about__text">
+          We are a forward-thinking team of designers
+          and developers driven by passion — and fuelled
+          by curiosity.
+        </p>
+        <p class="about__text">
+          We believe that the human dimensions
+          essential to start any successful project and
+          that this is where splendid emotional
+          relationships between the company and
+          people are born.
+        </p>
+        <a href="#" class="btn-team">MEET THE TEAM</a>
+      </div>
+    </div>
+
+  </section>
+  <!-- ===== END SECTION 2 ===== -->
+
+  <!-- ===== SECTION 3: CLIENTS ===== -->
+  <section class="clients">
+
+    <p class="clients__label">TEAMS AND COMPANIES WE WORK WITH</p>
+
+    <div class="clients__grid">
+      <a href="#" class="clients__item">
+        <img src="img/clients/snowflake.svg" alt="Snowflake">
+      </a>
+      <a href="#" class="clients__item">
+        <img src="img/clients/moue.svg" alt="Moue">
+      </a>
+      <a href="#" class="clients__item">
+        <img src="img/clients/spage.svg" alt="Spage">
+      </a>
+      <a href="#" class="clients__item">
+        <img src="img/clients/webflow.svg" alt="Webflow">
+      </a>
+      <a href="#" class="clients__item">
+        <img src="img/clients/rise.svg" alt="Rise">
+      </a>
+      <a href="#" class="clients__item">
+        <img src="img/clients/aoob.svg" alt="AOOB">
+      </a>
+    </div>
+
+    <a href="#" class="clients__link">VIEW OUR WORK</a>
+
+  </section>
+  <!-- ===== END SECTION 3 ===== -->
+
+  <!-- ===== SECTION 4: OUR WORK ===== -->
+  <section class="works">
+
+    <div class="works__header">
+      <h2 class="works__title">OUR WORK</h2>
+    </div>
+
+    <div class="works__grid">
+      <a href="#" class="works__item">
+        <img src="img/works/work-1.jpg" alt="Project 1">
+      </a>
+      <a href="#" class="works__item">
+        <img src="img/works/work-2.jpg" alt="Project 2">
+      </a>
+      <a href="#" class="works__item">
+        <img src="img/works/work-3.jpg" alt="Project 3">
+      </a>
+    </div>
+
+    <div class="works__footer">
+      <a href="#" class="works__all">ALL PROJECT</a>
+    </div>
+
+  </section>
+  <!-- ===== END SECTION 4 ===== -->
+
+  <!-- ===== SECTION 5: SERVICES ===== -->
+  <section class="services">
+
+    <h2 class="services__title">WE BUILD<br>EXPERIENCES</h2>
+
+    <div class="services__grid">
+
+      <div class="services__card">
+        <div class="services__card-top">
+          <div class="services__icon">
+            <img src="img/icons/prototyping.svg" alt="Prototyping">
+          </div>
+        </div>
+        <div class="services__card-body">
+          <h3 class="services__card-name">PROTOTYPING</h3>
+          <p class="services__card-text">Make sure you're building the right product.</p>
+        </div>
+      </div>
+
+      <div class="services__card">
+        <div class="services__card-top">
+          <div class="services__icon">
+            <img src="img/icons/web-design.svg" alt="Web Design">
+          </div>
+        </div>
+        <div class="services__card-body">
+          <h3 class="services__card-name">WEB DESIGN</h3>
+          <p class="services__card-text">Attract and engage your customers with a website.</p>
+        </div>
+      </div>
+
+      <div class="services__card">
+        <div class="services__card-top">
+          <div class="services__icon">
+            <img src="img/icons/development.svg" alt="Development">
+          </div>
+        </div>
+        <div class="services__card-body">
+          <h3 class="services__card-name">DEVELOPMENT</h3>
+          <p class="services__card-text">Ensure your site performs up to your users' standards.</p>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+  <!-- ===== END SECTION 5 ===== -->
+
+  <!-- ===== SECTION 6: TESTIMONIALS ===== -->
+  <section class="testimonials">
+
+    <h2 class="testimonials__title">TESTIMONIALS</h2>
+
+    <div class="testimonials__slider">
+
+      <div class="testimonials__slides">
+
+        <div class="testimonials__slide active">
+          <img src="img/testimonials/avatar-1.jpg" alt="John Doe" class="testimonials__avatar">
+          <blockquote class="testimonials__quote">
+            "Together with the Görm team, we<br>have compiled a new product page."
+          </blockquote>
+          <cite class="testimonials__author">
+            <span class="testimonials__name">JOHN DOE</span>
+            <span class="testimonials__role">GÖRM CUSTOMER</span>
+          </cite>
+        </div>
+
+        <div class="testimonials__slide">
+          <img src="img/testimonials/avatar-2.jpg" alt="Jane Smith" class="testimonials__avatar">
+          <blockquote class="testimonials__quote">
+            "The design team exceeded all our<br>expectations on this project."
+          </blockquote>
+          <cite class="testimonials__author">
+            <span class="testimonials__name">JANE SMITH</span>
+            <span class="testimonials__role">SPAGE CUSTOMER</span>
+          </cite>
+        </div>
+
+        <div class="testimonials__slide">
+          <img src="img/testimonials/avatar-3.jpg" alt="Mike Johnson" class="testimonials__avatar">
+          <blockquote class="testimonials__quote">
+            "Incredible attention to detail and<br>a truly collaborative process."
+          </blockquote>
+          <cite class="testimonials__author">
+            <span class="testimonials__name">MIKE JOHNSON</span>
+            <span class="testimonials__role">WEBFLOW CUSTOMER</span>
+          </cite>
+        </div>
+
+      </div>
+
+      <div class="testimonials__dots">
+        <button class="testimonials__dot active" aria-label="Slide 1"></button>
+        <button class="testimonials__dot" aria-label="Slide 2"></button>
+        <button class="testimonials__dot" aria-label="Slide 3"></button>
+      </div>
+
+    </div>
+
+  </section>
+  <!-- ===== END SECTION 6 ===== -->
+
+  <!-- ===== SECTION 7: SKILLS ===== -->
+  <section class="skills">
+
+    <div class="skills__left">
+      <h2 class="skills__title">OUR SKILLS</h2>
+
+      <ul class="skills__list">
+        <li class="skills__item">
+          <div class="skills__item-header">
+            <span class="skills__item-name">GRAPHIC DESIGN</span>
+            <span class="skills__item-value">80%</span>
+          </div>
+          <div class="skills__bar">
+            <div class="skills__bar-fill" data-width="80"></div>
+          </div>
+        </li>
+        <li class="skills__item">
+          <div class="skills__item-header">
+            <span class="skills__item-name">LEAD GENERATION</span>
+            <span class="skills__item-value">41%</span>
+          </div>
+          <div class="skills__bar">
+            <div class="skills__bar-fill" data-width="41"></div>
+          </div>
+        </li>
+        <li class="skills__item">
+          <div class="skills__item-header">
+            <span class="skills__item-name">PHOTOSHOP</span>
+            <span class="skills__item-value">70%</span>
+          </div>
+          <div class="skills__bar">
+            <div class="skills__bar-fill" data-width="70"></div>
+          </div>
+        </li>
+        <li class="skills__item">
+          <div class="skills__item-header">
+            <span class="skills__item-name">ILLUSTRATION</span>
+            <span class="skills__item-value">100%</span>
+          </div>
+          <div class="skills__bar">
+            <div class="skills__bar-fill" data-width="100"></div>
+          </div>
+        </li>
+      </ul>
+
+      <p class="skills__footnote">* Companies we've helped build their website with Görm</p>
+    </div>
+
+    <div class="skills__right">
+      <img src="img/skills-photo.jpg" alt="Our specialist">
+    </div>
+
+  </section>
+  <!-- ===== END SECTION 7 ===== -->
+
+  <!-- ===== SECTION 8: FUN FACTS ===== -->
+  <section class="facts">
+
+    <h2 class="facts__title">FUN FACTS</h2>
+
+    <div class="facts__grid">
+
+      <div class="facts__item">
+        <img src="img/icons/fact-idea.svg" alt="" class="facts__icon">
+        <div class="facts__text">
+          <span class="facts__number" data-target="10" data-suffix="">10</span>
+          <span class="facts__label">Years on market</span>
+        </div>
+      </div>
+
+      <div class="facts__item">
+        <img src="img/icons/fact-award.svg" alt="" class="facts__icon">
+        <div class="facts__text">
+          <span class="facts__number" data-target="340" data-suffix="+">340+</span>
+          <span class="facts__label">Project done</span>
+        </div>
+      </div>
+
+      <div class="facts__item">
+        <img src="img/icons/fact-member.svg" alt="" class="facts__icon">
+        <div class="facts__text">
+          <span class="facts__number" data-target="17" data-suffix="">17</span>
+          <span class="facts__label">Hero's member</span>
+        </div>
+      </div>
+
+      <div class="facts__item">
+        <img src="img/icons/fact-coffee.svg" alt="" class="facts__icon">
+        <div class="facts__text">
+          <span class="facts__number" data-target="900" data-suffix="+">900+</span>
+          <span class="facts__label">Cups of coffee</span>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+  <!-- ===== END SECTION 8 ===== -->
+
+  <!-- ===== SECTION 9: CONTACT ===== -->
+  <section class="contact">
+
+    <div class="contact__left">
+      <div class="contact__visual">
+        <img src="img/contact-photo.jpg" alt="Contact us">
+        <div class="contact__visual-panel"></div>
+      </div>
+    </div>
+
+    <div class="contact__right">
+      <h2 class="contact__title">CONTACT US</h2>
+      <form class="contact__form" action="#" method="POST">
+        <input class="contact__input" type="text" name="name" placeholder="Name*" required>
+        <input class="contact__input" type="email" name="email" placeholder="Email*" required>
+        <input class="contact__input" type="url" name="website" placeholder="Website URL*">
+        <textarea class="contact__input contact__textarea" name="details" placeholder="Project Details*" required></textarea>
+        <button class="contact__submit" type="submit">SEND PROPOSAL</button>
+      </form>
+    </div>
+
+  </section>
+  <!-- ===== END SECTION 9 ===== -->
+
+  <!-- ===== SECTION 10: BLOG ===== -->
+  <section class="blog">
+
+    <h2 class="blog__title">FROM BLOG</h2>
+
+    <div class="blog__grid">
+
+      <article class="blog__card">
+        <div class="blog__card-img">
+          <img src="img/blog/blog-1.jpg" alt="Curating a workplace">
+        </div>
+        <div class="blog__card-body">
+          <span class="blog__tag">MARKETING</span>
+          <h3 class="blog__card-title">CURATING A WORKPLACE THAT INSPIRES ALL OF US</h3>
+          <a href="#" class="blog__read-more">READ MORE</a>
+        </div>
+      </article>
+
+      <article class="blog__card">
+        <div class="blog__card-img">
+          <img src="img/blog/blog-2.jpg" alt="Designers who changed the web">
+        </div>
+        <div class="blog__card-body">
+          <span class="blog__tag">DESIGN</span>
+          <h3 class="blog__card-title">DESIGNERS WHO CHANGED THE WEB WITH WEBFLOW</h3>
+          <a href="#" class="blog__read-more">READ MORE</a>
+        </div>
+      </article>
+
+    </div>
+
+  </section>
+  <!-- ===== END SECTION 10 ===== -->
+
+  <!-- ===== TICKER ===== -->
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker__track">
+      <span class="ticker__item">LET'S TALK</span>
+      <span class="ticker__sep">—</span>
+      <span class="ticker__item">CONTACT US</span>
+      <span class="ticker__sep">—</span>
+      <span class="ticker__item">LET'S TALK</span>
+      <span class="ticker__sep">—</span>
+      <span class="ticker__item">CONTACT US</span>
+      <span class="ticker__sep">—</span>
+      <span class="ticker__item">LET'S TALK</span>
+      <span class="ticker__sep">—</span>
+      <span class="ticker__item">CONTACT US</span>
+      <span class="ticker__sep">—</span>
+      <span class="ticker__item">LET'S TALK</span>
+      <span class="ticker__sep">—</span>
+      <span class="ticker__item">CONTACT US</span>
+      <span class="ticker__sep">—</span>
+    </div>
+  </div>
+  <!-- ===== END TICKER ===== -->
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+
+    <div class="footer__main">
+
+      <div class="footer__brand">
+        <a href="#" class="footer__logo">
+          <img src="img/logo-text.svg" alt="Görm">
+        </a>
+        <p class="footer__desc">
+          Görm is an award UI/UX designs and branding agency based in New York, USA.
+        </p>
+        <nav class="footer__nav" aria-label="Footer navigation">
+          <a href="#" class="link-underline">HOME</a>
+          <a href="#" class="link-underline">ABOUT</a>
+          <a href="#" class="link-underline">STYLE GUIDE</a>
+          <a href="#" class="link-underline">LICENSING</a>
+          <a href="#" class="link-underline">INSTRUCTIONS</a>
+        </nav>
+      </div>
+
+      <div class="footer__contact">
+        <div class="footer__social">
+          <a href="#" class="footer__social-link">
+            <img src="img/icons/instagram.svg" alt="Instagram">
+            <span>Instagram</span>
+          </a>
+          <a href="#" class="footer__social-link">
+            <img src="img/icons/twitter.svg" alt="Twitter">
+            <span>Twitter</span>
+          </a>
+          <a href="#" class="footer__social-link">
+            <img src="img/icons/dribbble.svg" alt="Dribbble">
+            <span>Dribbble</span>
+          </a>
+        </div>
+        <div class="footer__info">
+          <a href="mailto:hello@görm.com" class="footer__email">HELLO@GÖRM.COM</a>
+          <a href="tel:+10042145700" class="footer__phone">+1 (004) 214 5700</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer__bottom">
+      <p>© This is a <a href="#">Deni Bozo</a> template powered by <a href="#">Webflow</a></p>
+    </div>
+
+  </footer>
+  <!-- ===== END FOOTER ===== -->
+
+  <script src="js/main.js"></script>
+</body>
+</html>

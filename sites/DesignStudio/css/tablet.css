@@ -1,0 +1,133 @@
+/* ============================================================
+   TABLET — max-width: 1024px
+   ============================================================ */
+@media (max-width: 1024px) {
+
+  :root {
+    --header-height: 68px;
+  }
+
+  /* Header */
+  .header {
+    padding: 0 24px;
+  }
+
+  .header__info {
+    gap: 16px;
+  }
+
+  /* Hero title */
+  .hero__content {
+    padding: 0 40px;
+  }
+
+  .hero__title {
+    font-size: clamp(56px, 8vw, 100px);
+  }
+
+  /* Social links */
+  .hero__social {
+    right: -14px;
+    gap: 32px;
+  }
+
+  /* Scroll indicator */
+  .hero__scroll {
+    left: 40px;
+    bottom: 28px;
+  }
+
+  /* --- Section 2 --- */
+  .about__photo {
+    height: 380px;
+  }
+
+  .about__showreel {
+    width: 120px;
+    height: 120px;
+  }
+
+  .about__content {
+    padding: 56px 40px 0;
+    gap: 32px;
+  }
+
+  /* --- Section 3 --- */
+  .clients {
+    padding: 64px 40px 56px;
+    gap: 44px;
+  }
+
+  .clients__grid {
+    column-gap: 48px;
+  }
+
+  /* --- Section 4 --- */
+  .works__header {
+    padding: 40px 40px 32px;
+  }
+
+  .works__item {
+    height: 420px;
+  }
+
+  /* --- Section 5 --- */
+  .services {
+    padding: 64px 40px 80px;
+  }
+
+  .services__grid {
+    gap: 14px;
+  }
+
+  /* --- Section 6 --- */
+  .testimonials {
+    padding: 64px 40px 80px;
+  }
+
+  /* --- Section 7 --- */
+  .skills__left {
+    padding: 64px 48px 64px 40px;
+    gap: 40px;
+  }
+
+  /* --- Section 8 --- */
+  .facts {
+    padding: 64px 40px;
+  }
+
+  .facts__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px 24px;
+  }
+
+  /* --- Section 9 --- */
+  .contact__right {
+    padding: 56px 40px;
+    gap: 32px;
+  }
+
+  .contact__visual {
+    height: 80%;
+  }
+
+  /* --- Section 10 --- */
+  .blog {
+    padding: 64px 40px;
+  }
+
+  .blog__card-img {
+    height: 220px;
+  }
+
+  /* --- Footer --- */
+  .footer__main {
+    padding: 48px 40px 40px;
+    flex-wrap: wrap;
+  }
+
+  .footer__bottom {
+    padding: 20px 40px;
+  }
+
+}
