@@ -234,6 +234,14 @@ const projects = [
     tags: ['HTML', 'CSS', 'JS'],
     image: './img/DesignStudio.webp',
     demoUrl: './sites/DesignStudio/index.html',
+  },
+  {
+    id: 10,
+    title: 'Bunker',
+    desc: 'Сеть магазинов электронных сигарет',
+    tags: ['HTML', 'CSS', 'JS'],
+    image: './img/Bunker.webp',
+    demoUrl: './sites/BunkerVapeShop/index.html',
   }
 
 ];

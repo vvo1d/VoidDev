@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <!-- SEO -->
+  <title>Бункер Vape Shop — Вейп магазин в Саратове | 14 магазинов</title>
+  <meta name="description" content="Бункер Vape Shop — крупнейшая сеть вейп-магазинов в Саратове и Энгельсе. Одноразовые ЭС, жидкости, испарители, поды, кальяны. Ремонт, Trade-in, выкуп устройств. 14 магазинов." />
+  <meta name="keywords" content="вейп магазин саратов, бункер вейп, vape shop саратов, одноразовые электронные сигареты, жидкости для вейпа, кальян саратов, испарители, под системы, ремонт вейпа" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://bunker-vape.ru/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Бункер Vape Shop — Вейп магазин в Саратове" />
+  <meta property="og:description" content="Крупнейшая сеть вейп-магазинов в Саратове. Одноразовые ЭС, жидкости, кальяны, испарители. Ремонт и Trade-in устройств." />
+  <meta property="og:image" content="img/logo.jpg" />
+  <meta property="og:url" content="https://bunker-vape.ru/" />
+  <meta property="og:locale" content="ru_RU" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Бункер Vape Shop — Саратов" />
+  <meta name="twitter:description" content="Крупнейшая сеть вейп-магазинов в Саратове. 14 магазинов." />
+  <meta name="twitter:image" content="img/logo.jpg" />
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Бункер Vape Shop",
+    "description": "Крупнейшая сеть вейп-магазинов в Саратове и Энгельсе",
+    "image": "img/logo.jpg",
+    "url": "https://bunker-vape.ru",
+    "telephone": "+7-000-000-0000",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "ул. Ново-Астраханское шоссе 107г с1",
+      "addressLocality": "Саратов",
+      "addressRegion": "Саратовская область",
+      "addressCountry": "RU"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 51.5337,
+      "longitude": 46.0342
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+      "opens": "10:00",
+      "closes": "22:00"
+    },
+    "priceRange": "$$",
+    "servesCuisine": "Vape Shop"
+  }
+  </script>
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+  <!-- Custom Cursor -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursor-follower"></div>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav" role="navigation" aria-label="Главная навигация">
+    <a href="#" class="nav-logo" aria-label="Бункер Vape Shop — главная">
+      <img src="img/logo.jpg" alt="Логотип Бункер Vape Shop" width="48" height="48" />
+      <span class="nav-logo-text">Бункер <span>Vape</span></span>
+    </a>
+    <ul class="nav-links" role="list">
+      <li><a href="#products">Продукция</a></li>
+      <li><a href="#services">Услуги</a></li>
+      <li><a href="#about">О нас</a></li>
+      <li><a href="#locations">Адреса</a></li>
+      <li><a href="#locations" class="nav-cta">Найти магазин</a></li>
+    </ul>
+    <button class="burger" id="burger" aria-label="Открыть меню" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true">
+    <ul class="mobile-nav-links" role="list">
+      <li><a href="#products" class="mobile-link">Продукция</a></li>
+      <li><a href="#services" class="mobile-link">Услуги</a></li>
+      <li><a href="#about" class="mobile-link">О нас</a></li>
+      <li><a href="#locations" class="mobile-link">Адреса</a></li>
+    </ul>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero" aria-label="Главный баннер">
+    <div class="hero-bg" id="hero-bg" role="img" aria-label="Фоновое изображение"></div>
+    <div class="hero-gradient"></div>
+    <div class="particles" id="particles" aria-hidden="true"></div>
+
+    <!-- Smoke Canvas -->
+    <canvas id="smoke-canvas" class="smoke-canvas" aria-hidden="true"></canvas>
+
+    <div class="hero-content">
+      <div class="hero-badge" aria-label="Сеть магазинов в Саратове">
+        Саратов &amp; Энгельс
+      </div>
+
+      <h1 class="hero-title">
+        <span class="line-1">Vape Shop</span>
+        <span class="line-2">Бункер</span>
+        <span class="line-3">&#9472; Твой выбор</span>
+      </h1>
+
+      <p class="hero-subtitle">
+        Крупнейшая сеть вейп-магазинов в Саратовской области.
+        Огромный ассортимент, честные цены, профессиональный сервис.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#products" class="btn-primary">Смотреть продукцию</a>
+        <a href="#locations" class="btn-secondary">Найти магазин</a>
+      </div>
+    </div>
+
+    <div class="hero-scroll" aria-hidden="true">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="stats-bar" aria-label="Ключевые показатели">
+    <div class="section-inner">
+      <div class="stat-item reveal">
+        <div class="stat-number" data-target="14">0</div>
+        <div class="stat-label">Магазинов</div>
+      </div>
+      <div class="stat-item reveal" style="transition-delay: 0.1s">
+        <div class="stat-number" data-target="5000">0</div>
+        <div class="stat-label">Товаров в наличии</div>
+      </div>
+      <div class="stat-item reveal" style="transition-delay: 0.2s">
+        <div class="stat-number" data-target="7">0</div>
+        <div class="stat-label">Лет на рынке</div>
+      </div>
+      <div class="stat-item reveal" style="transition-delay: 0.3s">
+        <div class="stat-number" data-target="50000">0</div>
+        <div class="stat-label">Довольных клиентов</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee-section" aria-hidden="true">
+    <div class="marquee-track">
+      <div class="marquee-item"><span>Одноразовые ЭС</span><div class="marquee-dot"></div></div>
+      <div class="marquee-item"><span>Жидкости</span><div class="marquee-dot"></div></div>
+      <div class="marquee-item"><span>Испарители</span><div class="marquee-dot"></div></div>
+      <div class="marquee-item"><span>Под-системы</span><div class="marquee-dot"></div></div>
+      <div class="marquee-item"><span>Всё для кальяна</span><div class="marquee-dot"></div></div>
+      <div class="marquee-item"><span>Картриджи</span><div class="marquee-dot"></div></div>
+      <div class="marquee-item"><span>Напитки</span><div class="marquee-dot"></div></div>
+      <div class="marquee-item"><span>Trade-in</span><div class="marquee-dot"></div></div>
+      <!-- Дублируем для бесшовной прокрутки -->
+      <div class="marquee-item"><span>Одноразовые ЭС</span><div class="marquee-dot"></div></div>
+      <div class="marquee-item"><span>Жидкости</span><div class="marquee-dot"></div></div>
+      <div class="marquee-item"><span>Испарители</span><div class="marquee-dot"></div></div>
+      <div class="marquee-item"><span>Под-системы</span><div class="marquee-dot"></div></div>
+      <div class="marquee-item"><span>Всё для кальяна</span><div class="marquee-dot"></div></div>
+      <div class="marquee-item"><span>Картриджи</span><div class="marquee-dot"></div></div>
+      <div class="marquee-item"><span>Напитки</span><div class="marquee-dot"></div></div>
+      <div class="marquee-item"><span>Trade-in</span><div class="marquee-dot"></div></div>
+    </div>
+  </div>
+
+  <!-- PRODUCTS -->
+  <section class="products" id="products">
+    <div class="section-inner">
+      <div class="products-header">
+        <div>
+          <p class="section-label reveal-left">Ассортимент</p>
+          <h2 class="section-title reveal-left" style="transition-delay: 0.1s">
+            Всё, что нужно<br /><span>вейперу</span>
+          </h2>
+        </div>
+        <p class="section-desc reveal-right">
+          Мы работаем только с проверенными брендами и поставщиками.
+          Каждый товар проходит контроль качества перед поступлением на полки.
+        </p>
+      </div>
+
+      <div class="products-grid">
+        <div class="product-card featured reveal" style="transition-delay: 0s">
+          <div class="product-icon">🚬</div>
+          <div class="product-arrow">↗</div>
+          <div class="product-name">Одноразовые ЭС</div>
+          <div class="product-desc">Огромный выбор одноразовых электронных сигарет от ведущих мировых брендов.</div>
+        </div>
+        <div class="product-card reveal" style="transition-delay: 0.1s">
+          <div class="product-icon">💧</div>
+          <div class="product-arrow">↗</div>
+          <div class="product-name">Жидкости</div>
+          <div class="product-desc">Сотни вкусов жидкостей для вейпинга любых концентраций никотина.</div>
+        </div>
+        <div class="product-card reveal" style="transition-delay: 0.15s">
+          <div class="product-icon">🌿</div>
+          <div class="product-arrow">↗</div>
+          <div class="product-name">Жевательный табак</div>
+          <div class="product-desc">Широкий выбор никотиновых подушечек и жевательного табака.</div>
+        </div>
+        <div class="product-card reveal" style="transition-delay: 0.2s">
+          <div class="product-icon">🪬</div>
+          <div class="product-arrow">↗</div>
+          <div class="product-name">Всё для кальяна</div>
+          <div class="product-desc">Табак, угли, колбы, шланги и всё необходимое для кальянного опыта.</div>
+        </div>
+        <div class="product-card reveal" style="transition-delay: 0.25s">
+          <div class="product-icon">🥤</div>
+          <div class="product-arrow">↗</div>
+          <div class="product-name">Напитки</div>
+          <div class="product-desc">Энергетики и газированные напитки для дополнения вашего опыта.</div>
+        </div>
+        <div class="product-card reveal" style="transition-delay: 0.3s">
+          <div class="product-icon">🔋</div>
+          <div class="product-arrow">↗</div>
+          <div class="product-name">Картриджи</div>
+          <div class="product-desc">Сменные картриджи для под-систем всех популярных марок.</div>
+        </div>
+        <div class="product-card reveal" style="transition-delay: 0.35s">
+          <div class="product-icon">🌀</div>
+          <div class="product-arrow">↗</div>
+          <div class="product-name">Испарители</div>
+          <div class="product-desc">Сетки, спирали и испарители для любых устройств и стилей парения.</div>
+        </div>
+        <div class="product-card featured reveal" style="transition-delay: 0.4s">
+          <div class="product-icon">📱</div>
+          <div class="product-arrow">↗</div>
+          <div class="product-name">Под-системы</div>
+          <div class="product-desc">Компактные под-системы от IQOS, JUUL, Vaporesso, SMOK и других брендов.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <div class="section-inner">
+      <p class="section-label reveal">Сервис</p>
+      <h2 class="section-title reveal" style="transition-delay: 0.1s">
+        Больше, чем<br /><span>просто магазин</span>
+      </h2>
+
+      <div class="services-grid">
+        <div class="service-card reveal" style="transition-delay: 0s">
+          <div class="service-icon-large">🔧</div>
+          <div class="service-body">
+            <div class="service-number">01</div>
+            <div class="service-title">Ремонт устройств</div>
+            <div class="service-text">
+              Профессиональный ремонт любых вейп-устройств. Диагностика, замена кнопок,
+              чипов, разъёмов. Работаем быстро и качественно.
+            </div>
+          </div>
+        </div>
+        <div class="service-card reveal" style="transition-delay: 0.1s">
+          <div class="service-icon-large">⚡</div>
+          <div class="service-body">
+            <div class="service-number">02</div>
+            <div class="service-title">Экспресс-выкуп</div>
+            <div class="service-text">
+              Срочный выкуп вейп-устройств. Оцениваем и платим сразу.
+              Принимаем устройства в любом состоянии.
+            </div>
+          </div>
+        </div>
+        <div class="service-card reveal" style="transition-delay: 0.2s">
+          <div class="service-icon-large">🔄</div>
+          <div class="service-body">
+            <div class="service-number">03</div>
+            <div class="service-title">Trade-in</div>
+            <div class="service-text">
+              Обменяйте своё старое устройство на новое с доплатой.
+              Выгодные условия для постоянных клиентов.
+            </div>
+          </div>
+        </div>
+        <div class="service-card reveal" style="transition-delay: 0.3s">
+          <div class="service-icon-large">🛒</div>
+          <div class="service-body">
+            <div class="service-number">04</div>
+            <div class="service-title">Продажа б/у</div>
+            <div class="service-text">
+              Проверенные б/у устройства по доступным ценам.
+              Каждое устройство тестируется и предоставляется с гарантией.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY US -->
+  <section class="features" id="about">
+    <div class="section-inner">
+      <div class="features-inner">
+        <div class="features-visual reveal-left">
+          <div class="features-img-wrap">
+            <img src="img/Vape.png" alt="Интерьер Бункер Vape Shop" loading="lazy" />
+            <div class="features-img-overlay"></div>
+            <div class="features-smoke" aria-hidden="true">
+              <!-- <div class="features-smoke-inner"></div> -->
+            </div>
+          </div>
+          <!-- <div class="features-badge-1">
+            <div class="badge-value">14</div>
+            <div class="badge-label">магазинов</div>
+          </div>
+          <div class="features-badge-2">
+            <div class="badge-value">7+</div>
+            <div class="badge-label">лет опыта</div>
+          </div> -->
+        </div>
+
+        <div class="reveal-right">
+          <p class="section-label">Почему мы</p>
+          <h2 class="section-title">
+            Доверие<br />тысяч <span>клиентов</span>
+          </h2>
+          <p class="section-desc">
+            Мы первые открыли вейп-магазин в Саратове и за годы работы
+            стали крупнейшей сетью в регионе. Наши клиенты возвращаются снова.
+          </p>
+
+          <ul class="features-list" role="list">
+            <li class="feature-item">
+              <div class="feature-check">✓</div>
+              <div class="feature-text-wrap">
+                <div class="feature-title">Только оригинальная продукция</div>
+                <div class="feature-desc">Работаем напрямую с официальными дистрибьюторами. Никакого контрафакта.</div>
+              </div>
+            </li>
+            <li class="feature-item">
+              <div class="feature-check">✓</div>
+              <div class="feature-text-wrap">
+                <div class="feature-title">Грамотные консультанты</div>
+                <div class="feature-desc">Каждый сотрудник — опытный пользователь, который поможет с выбором.</div>
+              </div>
+            </li>
+            <li class="feature-item">
+              <div class="feature-check">✓</div>
+              <div class="feature-text-wrap">
+                <div class="feature-title">14 магазинов в двух городах</div>
+                <div class="feature-desc">Всегда найдёте магазин рядом с домом или работой.</div>
+              </div>
+            </li>
+            <li class="feature-item">
+              <div class="feature-check">✓</div>
+              <div class="feature-text-wrap">
+                <div class="feature-title">Программа лояльности</div>
+                <div class="feature-desc">Накапливайте бонусы и получайте скидки на следующие покупки.</div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE 2 -->
+  <div class="marquee-section" aria-hidden="true" style="background: var(--dark-3);">
+    <div class="marquee-track" style="animation-direction: reverse;">
+      <div class="marquee-item" style="color: rgba(192,57,43,0.8)"><span>Бункер Vape Shop</span><div class="marquee-dot" style="background: rgba(192,57,43,0.4)"></div></div>
+      <div class="marquee-item" style="color: rgba(255,255,255,0.3)"><span>г. Саратов</span><div class="marquee-dot" style="background: rgba(255,255,255,0.15)"></div></div>
+      <div class="marquee-item" style="color: rgba(192,57,43,0.8)"><span>г. Энгельс</span><div class="marquee-dot" style="background: rgba(192,57,43,0.4)"></div></div>
+      <div class="marquee-item" style="color: rgba(255,255,255,0.3)"><span>Ремонт устройств</span><div class="marquee-dot" style="background: rgba(255,255,255,0.15)"></div></div>
+      <div class="marquee-item" style="color: rgba(192,57,43,0.8)"><span>Trade-in</span><div class="marquee-dot" style="background: rgba(192,57,43,0.4)"></div></div>
+      <div class="marquee-item" style="color: rgba(255,255,255,0.3)"><span>Экспресс-выкуп</span><div class="marquee-dot" style="background: rgba(255,255,255,0.15)"></div></div>
+      <!-- dup -->
+      <div class="marquee-item" style="color: rgba(192,57,43,0.8)"><span>Бункер Vape Shop</span><div class="marquee-dot" style="background: rgba(192,57,43,0.4)"></div></div>
+      <div class="marquee-item" style="color: rgba(255,255,255,0.3)"><span>г. Саратов</span><div class="marquee-dot" style="background: rgba(255,255,255,0.15)"></div></div>
+      <div class="marquee-item" style="color: rgba(192,57,43,0.8)"><span>г. Энгельс</span><div class="marquee-dot" style="background: rgba(192,57,43,0.4)"></div></div>
+      <div class="marquee-item" style="color: rgba(255,255,255,0.3)"><span>Ремонт устройств</span><div class="marquee-dot" style="background: rgba(255,255,255,0.15)"></div></div>
+      <div class="marquee-item" style="color: rgba(192,57,43,0.8)"><span>Trade-in</span><div class="marquee-dot" style="background: rgba(192,57,43,0.4)"></div></div>
+      <div class="marquee-item" style="color: rgba(255,255,255,0.3)"><span>Экспресс-выкуп</span><div class="marquee-dot" style="background: rgba(255,255,255,0.15)"></div></div>
+    </div>
+  </div>
+
+  <!-- LOCATIONS -->
+  <section class="locations" id="locations">
+    <div class="section-inner">
+      <div class="locations-header">
+        <div>
+          <p class="section-label reveal-left">Адреса</p>
+          <h2 class="section-title reveal-left" style="transition-delay: 0.1s">
+            Мы рядом<br /><span>с тобой</span>
+          </h2>
+        </div>
+        <p class="section-desc reveal-right">
+          17 магазинов в Саратове и Энгельсе. Кликните на метку, чтобы узнать адрес.
+        </p>
+      </div>
+
+      <!-- MAP -->
+      <div class="map-wrap reveal">
+        <div id="store-map"></div>
+        <div class="map-legend">
+          <span class="map-legend-dot"></span>
+          Бункер Vape Shop
+        </div>
+      </div>
+
+      <!-- Working hours note -->
+      <div class="locations-hours-note reveal">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        Все магазины работают ежедневно с <strong>10:00</strong> до <strong>22:00</strong>
+      </div>
+
+      <!-- CARDS GRID -->
+      <div class="locations-grid">
+        <div class="location-card reveal" style="transition-delay: 0s" data-idx="0">
+          <div class="location-city">Саратов</div>
+          <div class="location-address">ул. Ново-Астраханское шоссе, 107г с1</div>
+        </div>
+        <div class="location-card reveal" style="transition-delay: 0.04s" data-idx="1">
+          <div class="location-city">Саратов</div>
+          <div class="location-address">пл. Орджоникидзе, 11</div>
+        </div>
+        <div class="location-card reveal" style="transition-delay: 0.08s" data-idx="2">
+          <div class="location-city">Саратов</div>
+          <div class="location-address">ул. Н.И. Вавилова, 9</div>
+        </div>
+        <div class="location-card reveal" style="transition-delay: 0.12s" data-idx="3">
+          <div class="location-city">Саратов</div>
+          <div class="location-address">ул. 2-я Садовая, 4</div>
+        </div>
+        <div class="location-card reveal" style="transition-delay: 0.16s" data-idx="4">
+          <div class="location-city">Саратов</div>
+          <div class="location-address">ул. Огородная, 149</div>
+        </div>
+        <div class="location-card reveal" style="transition-delay: 0.2s" data-idx="5">
+          <div class="location-city">Саратов</div>
+          <div class="location-address">ул. Рахова, 64/70а</div>
+        </div>
+        <div class="location-card reveal" style="transition-delay: 0.24s" data-idx="6">
+          <div class="location-city">Саратов</div>
+          <div class="location-address">ул. Танкистов, 64</div>
+        </div>
+        <div class="location-card reveal" style="transition-delay: 0.28s" data-idx="7">
+          <div class="location-city">Саратов</div>
+          <div class="location-address">ул. Чапаева, 60/64</div>
+        </div>
+        <div class="location-card reveal" style="transition-delay: 0.32s" data-idx="8">
+          <div class="location-city">Саратов</div>
+          <div class="location-address">ул. Колхозная, 1а</div>
+        </div>
+        <div class="location-card reveal" style="transition-delay: 0.36s" data-idx="9">
+          <div class="location-city">Саратов</div>
+          <div class="location-address">ул. Ипподромная, 9</div>
+        </div>
+        <div class="location-card reveal" style="transition-delay: 0.4s" data-idx="10">
+          <div class="location-city">Саратов</div>
+          <div class="location-address">ул. Техническая, 5</div>
+        </div>
+        <div class="location-card reveal" style="transition-delay: 0.44s" data-idx="11">
+          <div class="location-city">Саратов</div>
+          <div class="location-address">ул. Тархова, 27</div>
+        </div>
+        <div class="location-card reveal" style="transition-delay: 0.48s" data-idx="12">
+          <div class="location-city">Саратов</div>
+          <div class="location-address">ул. Горького, 30</div>
+        </div>
+        <div class="location-card reveal" style="transition-delay: 0.52s" data-idx="13">
+          <div class="location-city">Саратов</div>
+          <div class="location-address">ул. Вольская, 21/27</div>
+        </div>
+        <div class="location-card reveal" style="transition-delay: 0.56s" data-idx="14">
+          <div class="location-city">Саратов</div>
+          <div class="location-address">ул. Вольская, 44</div>
+        </div>
+        <div class="location-card reveal" style="transition-delay: 0.60s" data-idx="15">
+          <div class="location-city">Саратов</div>
+          <div class="location-address">ул. Академика Семенова, 9</div>
+        </div>
+        <div class="location-card reveal" style="transition-delay: 0.64s" data-idx="16">
+          <div class="location-city">Энгельс</div>
+          <div class="location-address">пр. Фридриха Энгельса, 4</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="cta-smoke-wrap" aria-hidden="true">
+      <div class="cta-smoke cta-smoke-1"></div>
+      <div class="cta-smoke cta-smoke-2"></div>
+      <div class="cta-smoke cta-smoke-3"></div>
+    </div>
+    <div class="section-inner">
+      <div class="cta-inner reveal">
+        <h2 class="cta-title">
+          Заходи в<br /><span>Бункер</span>
+        </h2>
+        <p class="cta-text">
+          Найди ближайший магазин и открой для себя мир качественного вейпинга.
+          Наши консультанты помогут подобрать идеальное устройство.
+        </p>
+        <div class="cta-actions">
+          <a href="#locations" class="btn-primary">Найти магазин рядом</a>
+          <a href="tel:+70000000000" class="btn-secondary">Позвонить нам</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="#" class="footer-logo">
+            <img src="img/logo.jpg" alt="Бункер Vape Shop" width="44" height="44" loading="lazy" />
+            <span class="footer-logo-text">Бункер <span>Vape</span></span>
+          </a>
+          <p class="footer-tagline">
+            Крупнейшая сеть вейп-магазинов Саратовской области. Работаем с 2017 года.
+          </p>
+          <div class="footer-socials" aria-label="Социальные сети">
+            <a href="#" class="social-link" aria-label="ВКонтакте" title="ВКонтакте">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm5.567 10.5h-1.8c-.4 0-.5-.2-.5-.5v-1.5c0-.3.1-.5.5-.5h1.8c0 0 .433 1 0 2.5zm-10.134 0h-1.8c-.4 0-.5-.2-.5-.5v-1.5c0-.3.1-.5.5-.5h1.8c0 0 .433 1 0 2.5z"/></svg>
+            </a>
+            <a href="#" class="social-link" aria-label="Telegram" title="Telegram">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8l-1.7 8.02c-.12.56-.46.7-.93.43l-2.57-1.89-1.24 1.19c-.14.14-.25.25-.51.25l.18-2.57 4.66-4.21c.2-.18-.04-.28-.31-.1L7.74 15.29l-2.5-.78c-.54-.17-.55-.54.11-.8l9.74-3.75c.45-.17.84.11.55.84z"/></svg>
+            </a>
+            <a href="#" class="social-link" aria-label="Instagram" title="Instagram">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Продукция</div>
+          <ul class="footer-links" role="list">
+            <li><a href="#products">Одноразовые ЭС</a></li>
+            <li><a href="#products">Жидкости</a></li>
+            <li><a href="#products">Испарители</a></li>
+            <li><a href="#products">Под-системы</a></li>
+            <li><a href="#products">Всё для кальяна</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Услуги</div>
+          <ul class="footer-links" role="list">
+            <li><a href="#services">Ремонт устройств</a></li>
+            <li><a href="#services">Экспресс-выкуп</a></li>
+            <li><a href="#services">Trade-in</a></li>
+            <li><a href="#services">Продажа б/у</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Режим работы</div>
+          <div class="footer-hours">
+            <div class="hours-row">
+              <span class="hours-day">Пн – Пт</span>
+              <span class="hours-time">10:00 – 22:00</span>
+            </div>
+            <div class="hours-row">
+              <span class="hours-day">Суббота</span>
+              <span class="hours-time">10:00 – 22:00</span>
+            </div>
+            <div class="hours-row">
+              <span class="hours-day">Воскресенье</span>
+              <span class="hours-time">10:00 – 22:00</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div style="display: flex; align-items: center; gap: 16px;">
+          <span class="age-badge" aria-label="Только для взрослых 18+">18+</span>
+          <span class="footer-copy">© 2026 Бункер Vape Shop. Все права защищены.</span>
+        </div>
+        <nav class="footer-legal" aria-label="Юридическая информация">
+          <a href="#">Политика конфиденциальности</a>
+          <a href="#">Условия использования</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+  <script src="js/scripts.js"></script>
+</body>
+</html>
