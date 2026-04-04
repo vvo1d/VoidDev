@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MNTN — Be Prepared For The Mountains</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garant:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════
+       FIXED UI — nav, dots, counter
+  ════════════════════════════════════ -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">MNTN</a>
+      <button class="burger" id="burger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a data-go="1">Equipment</a></li>
+        <li><a data-go="2">About us</a></li>
+        <li><a data-go="3">Blog</a></li>
+      </ul>
+      <a href="#" class="nav-account">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+        Account
+      </a>
+    </div>
+  </nav>
+
+  <!-- Section dots (right side, all sections) -->
+  <nav class="side-dots" id="sideDots" aria-label="Sections">
+    <span class="side-label" id="sideLabel">Start</span>
+    <div class="dots-track">
+      <button class="dot active" data-go="0" aria-label="Hero"></button>
+      <button class="dot"        data-go="1" aria-label="Section 1"></button>
+      <button class="dot"        data-go="2" aria-label="Section 2"></button>
+      <button class="dot"        data-go="3" aria-label="Section 3"></button>
+      <button class="dot"        data-go="4" aria-label="Footer"></button>
+    </div>
+  </nav>
+
+  <!-- Section counter (bottom right) -->
+  <div class="section-counter" id="sectionCounter">
+    <span class="counter-cur" id="counterCur">01</span>
+    <span class="counter-sep">/</span>
+    <span class="counter-tot">05</span>
+  </div>
+
+  <!-- Transition curtain -->
+  <div class="curtain" id="curtain"></div>
+
+  <!-- ═══════════════════════════════════
+       PAGE WRAPPER — fullpage stack
+  ════════════════════════════════════ -->
+  <div class="page-wrapper" id="pageWrapper">
+
+    <!-- ─── SECTION 0 · HERO ─── -->
+    <section class="page-section is-active" id="s0">
+
+      <div class="hero-layer layer-sky"   id="layerSky"></div>
+      <div class="hero-layer layer-photo" id="layerPhoto"></div>
+
+      <div  class="hero-layer layer-mtn-far" id="layerMtnFar">
+        <img  src="img/VG.svg" alt="">
+      </div>
+
+      <div  class="hero-layer layer-mtn-mid" id="layerMtnMid">
+        <img src="img/MG.svg" alt="">
+      </div>
+
+      <div  class="hero-layer layer-grass" id="layerGrass">
+        <img src="img/HG.svg" alt="">
+      </div>
+
+      <div class="hero-fog" id="heroFog"></div>
+      <canvas class="hero-canvas" id="heroCanvas"></canvas>
+      <div class="hero-vignette"></div>
+
+      <!-- Social sidebar -->
+      <div class="hero-social">
+        <span class="social-label">Follow us</span>
+        <div class="social-line"></div>
+        <a href="#" aria-label="Instagram">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a href="#" aria-label="Twitter">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+      </div>
+
+      <!-- Hero content -->
+      <div class="hero-content">
+        <p class="hero-eyebrow h-r" style="--d:0">
+          <span class="eyebrow-line"></span>A Hiking Guide
+        </p>
+        <h1 class="hero-title h-r" style="--d:1">
+          Be Prepared For<br>The Mountains<br>And Beyond!
+        </h1>
+        <button class="hero-scroll h-r" style="--d:2" data-go="1">
+          scroll down
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19,12 12,19 5,12"/></svg>
+        </button>
+      </div>
+
+    </section><!-- /s0 -->
+
+    <!-- ─── SECTION 1 · GET STARTED ─── -->
+    <section class="page-section is-below" id="s1">
+      <div class="section-bg sb-1"></div>
+      <div class="feature-inner">
+
+        <div class="feature-text">
+          <div class="feature-meta">
+            <span class="feature-num f-r" style="--d:0">01</span>
+            <span class="feature-cat f-r" style="--d:1">
+              <span class="cat-line"></span>Get Started
+            </span>
+          </div>
+          <h2 class="feature-title f-r" style="--d:2">What level of hiker<br>are you?</h2>
+          <p class="feature-body f-r" style="--d:3">Determining what level of hiker you are can be an important tool when planning future hikes. This hiking level guide will help you plan hikes according to different hike ratings set by various websites like All Trails and Modern Hiker. What type of hiker are you — novice, moderate, advanced moderate, expert, or expert backpacker?</p>
+          <a href="#" class="feature-link f-r" style="--d:4">
+            read more
+            <svg width="20" height="12" viewBox="0 0 28 12" fill="none"><line x1="0" y1="6" x2="22" y2="6" stroke="currentColor" stroke-width="1.5"/><polyline points="17,1 23,6 17,11" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+          </a>
+        </div>
+
+        <div class="feature-image f-r" style="--d:2; --from:right">
+          <div class="img-3d-wrap">
+            <img src="img/01.png" alt="Hiker on mountain trail" loading="lazy">
+            <div class="img-glare"></div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- /s1 -->
+
+    <!-- ─── SECTION 2 · GEAR ─── -->
+    <section class="page-section is-below" id="s2">
+      <div class="section-bg sb-2"></div>
+      <div class="feature-inner feature-inner--rev">
+
+        <div class="feature-image f-r" style="--d:2; --from:left">
+          <div class="img-3d-wrap">
+            <img src="img/02.png" alt="Mountain hiker with backpack" loading="lazy">
+            <div class="img-glare"></div>
+          </div>
+        </div>
+
+        <div class="feature-text">
+          <div class="feature-meta">
+            <span class="feature-num f-r" style="--d:0">02</span>
+            <span class="feature-cat f-r" style="--d:1">
+              <span class="cat-line"></span>Hiking Essentials
+            </span>
+          </div>
+          <h2 class="feature-title f-r" style="--d:2">Picking the right<br>Hiking Gear!</h2>
+          <p class="feature-body f-r" style="--d:3">The nice thing about beginning hiking is that you don't really need any special gear, you can probably get away with things you already have. Let's start with clothing. A typical mistake hiking beginners make is wearing jeans and regular clothes, which will get heavy and chafe when they get sweaty or wet.</p>
+          <a href="#" class="feature-link f-r" style="--d:4">
+            read more
+            <svg width="20" height="12" viewBox="0 0 28 12" fill="none"><line x1="0" y1="6" x2="22" y2="6" stroke="currentColor" stroke-width="1.5"/><polyline points="17,1 23,6 17,11" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+          </a>
+        </div>
+
+      </div>
+    </section><!-- /s2 -->
+
+    <!-- ─── SECTION 3 · MAP & TIMING ─── -->
+    <section class="page-section is-below" id="s3">
+      <div class="section-bg sb-3"></div>
+      <div class="feature-inner">
+
+        <div class="feature-text">
+          <div class="feature-meta">
+            <span class="feature-num f-r" style="--d:0">03</span>
+            <span class="feature-cat f-r" style="--d:1">
+              <span class="cat-line"></span>Where You Go Is The Key
+            </span>
+          </div>
+          <h2 class="feature-title f-r" style="--d:2">Understand Your<br>Map &amp; Timing</h2>
+          <p class="feature-body f-r" style="--d:3">To start, print out the hiking guide and map. If it's raining, throw them in a Zip-Lock bag. Read over the guide, study the map, and have a good idea of what to expect. I like to know what my next landmark is as I hike. For example, I'll read the guide and know that say, in a mile, I make a right turn at the junction.</p>
+          <a href="#" class="feature-link f-r" style="--d:4">
+            read more
+            <svg width="20" height="12" viewBox="0 0 28 12" fill="none"><line x1="0" y1="6" x2="22" y2="6" stroke="currentColor" stroke-width="1.5"/><polyline points="17,1 23,6 17,11" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+          </a>
+        </div>
+
+        <div class="feature-image f-r" style="--d:2; --from:right">
+          <div class="img-3d-wrap">
+            <img src="img/03.png" alt="Compass on mountain top" loading="lazy">
+            <div class="img-glare"></div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- /s3 -->
+
+    <!-- ─── SECTION 4 · FOOTER ─── -->
+    <section class="page-section is-below" id="s4">
+      <div class="section-bg sb-footer"></div>
+      <footer class="footer">
+        <div class="footer-inner">
+          <div class="footer-brand f-r" style="--d:0">
+            <p class="footer-logo">MNTN</p>
+            <p class="footer-tagline">Get out there &amp; discover your next<br>slope, mountain &amp; destination!</p>
+          </div>
+          <div class="footer-links">
+            <div class="footer-col f-r" style="--d:1">
+              <h4>More on The Blog</h4>
+              <ul>
+                <li><a href="#">About MNTN</a></li>
+                <li><a href="#">Contributors &amp; Writers</a></li>
+                <li><a href="#">Write For Us</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+              </ul>
+            </div>
+            <div class="footer-col f-r" style="--d:2">
+              <h4>More on MNTN</h4>
+              <ul>
+                <li><a href="#">The Team</a></li>
+                <li><a href="#">Jobs</a></li>
+                <li><a href="#">Press</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom f-r" style="--d:3">
+          <span>Copyright 2026 MNTN, Inc. Terms &amp; Privacy</span>
+        </div>
+      </footer>
+    </section><!-- /s4 -->
+
+  </div><!-- /page-wrapper -->
+
+  <script src="main.js"></script>
+</body>
+</html>

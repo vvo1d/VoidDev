@@ -242,6 +242,14 @@ const projects = [
     tags: ['HTML', 'CSS', 'JS'],
     image: './img/Bunker.webp',
     demoUrl: './sites/BunkerVapeShop/index.html',
+  },
+  {
+    id: 11,
+    title: 'MNTN',
+    desc: 'Походный гид',
+    tags: ['HTML', 'CSS', 'JS'],
+    image: './img/MNTN.webp',
+    demoUrl: './sites/MNTN/index.html',
   }
 
 ];
